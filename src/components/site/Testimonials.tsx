@@ -9,9 +9,9 @@ import "swiper/css/pagination";
 
 const TESTIMONIALS = [
   {
-    name: "Bailey McBride",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
-    text: "McKinney Dental and Implant Center took amazing care of me. I walked in and Maria explained everything that was going to happen next. Dr. He took the time to listen to my past experiences and my needs. My teeth looking amazing and can't wait to go back in 6 months. I highly recommend McKinney Dental and Implant Center."
+    name: "Sarah Jenkins",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80",
+    text: "The team at McKinney Dental and Implant Center is absolutely phenomenal. From the moment I walked in, I felt comfortable and cared for. Dr. Juma took the time to explain every detail of my implant procedure, and the results have truly changed my life. I can't stop smiling!"
   },
   {
     name: "Elisha Ayuak",
@@ -37,10 +37,10 @@ export function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="font-display text-4xl sm:text-5xl lg:text-[42px] font-semibold text-[#444] leading-tight">
-            See What Our <span className="text-[#3269c3]">Patient</span> Are <span className="text-[#3269c3]">Saying</span>
+            Real Stories. <span className="text-[#3269c3]">Real Smiles.</span>
           </h2>
           <p className="mt-6 text-[15px] sm:text-base text-slate-400 max-w-4xl mx-auto leading-relaxed font-light">
-            Our focus is your comprehensive oral health and wellness.. but we love the challange of guiding you through any reconstructiv cosmetic needs!
+            See why patients trust us for patient-centered care, healthy smiles, and exceptional results.
           </p>
         </motion.div>
 

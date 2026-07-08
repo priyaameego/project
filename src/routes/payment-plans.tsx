@@ -119,12 +119,83 @@ function PaymentPlansPage() {
             })}
           </div>
 
+          {/* Dedicated CareCredit Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-16 bg-white border border-[#0B2A33]/10 shadow-[0_25px_50px_-20px_rgba(11,42,51,0.15)] rounded-[2.5rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden"
+          >
+            {/* Background accent */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#0E7C8C]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            
+            <div className="relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7">
+                <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C8C]/10 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase text-[#0E7C8C] mb-6">
+                  Financing Partner
+                </div>
+                <h2 className="font-display text-[32px] sm:text-[40px] font-semibold text-[#0B2A33] leading-tight mb-4">
+                  Smile now. Pay over time with <span className="italic text-[#0E7C8C] font-serif">CareCredit</span>.
+                </h2>
+                <p className="text-[#64748B] text-[16px] leading-relaxed mb-6">
+                  CareCredit is a healthcare credit card designed specifically to help you finance your dental and health treatments. It allows you to break down the cost of procedures into manageable, budget-friendly monthly payments rather than paying a lump sum upfront.
+                </p>
+                
+                <div className="grid sm:grid-cols-2 gap-5 mb-8">
+                  {[
+                    "Flexible 6 to 24-month terms",
+                    "No interest if paid in full options",
+                    "Quick and easy online application",
+                    "Use for almost any dental procedure"
+                  ].map((benefit, i) => (
+                    <div key={i} className="flex items-start gap-3 bg-[#FAFCFF] border border-[#0B2A33]/5 p-3.5 rounded-xl">
+                      <FiCheck className="text-[#E2B66B] mt-0.5 shrink-0 text-lg" />
+                      <span className="text-[14px] font-medium text-[#0B2A33]">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <a
+                  href="https://www.carecredit.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-[14px] font-semibold text-white transition-all hover:shadow-[0_15px_30px_-10px_rgba(14,124,140,0.5)]"
+                  style={{ background: ACCENT }}
+                >
+                  Apply for CareCredit <FiArrowUpRight />
+                </a>
+              </div>
+              
+              <div className="lg:col-span-5 relative">
+                <div className="rounded-3xl overflow-hidden shadow-xl aspect-square sm:aspect-[4/3] lg:aspect-square">
+                  <img 
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" 
+                    alt="Patient paying for dental care" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-[#0B2A33]/5">
+                  <div className="flex items-center gap-4">
+                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-[#E2B66B]/20 text-[#E2B66B]">
+                      <FiDollarSign size={24} />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-[#0B2A33]">Affordable Care</div>
+                      <div className="text-xs text-[#64748B]">Fit dentistry into your budget</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-14 rounded-3xl p-8 sm:p-12 text-center text-white"
+            className="mt-20 rounded-3xl p-8 sm:p-12 text-center text-white"
             style={{ background: `linear-gradient(120deg, ${INK} 0%, ${ACCENT} 100%)` }}
           >
             <h3 className="font-display text-2xl sm:text-3xl font-semibold">
@@ -135,7 +206,7 @@ function PaymentPlansPage() {
             </p>
             <Link
               to="/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-[#0B2A33]"
+              className="mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-[#0B2A33] transition-transform hover:-translate-y-0.5"
               style={{ background: GOLD }}
             >
               Contact our team <FiArrowUpRight />

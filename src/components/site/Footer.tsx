@@ -52,19 +52,19 @@ export function Footer() {
               </p>
               <div className="mt-6 flex items-center gap-3">
                 <a
-                  href="https://facebook.com"
+                  href="https://facebook.com/mckinneydentalandimplantcenter"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-white/70 hover:bg-white/10 hover:text-white transition-all border border-white/10"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-white/70 hover:bg-blue-500 hover:text-white transition-all border border-white/10 shadow-sm"
                   aria-label="Facebook"
                 >
                   <FiFacebook className="text-lg" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/mckinneyddscenter"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-white/70 hover:bg-white/10 hover:text-white transition-all border border-white/10"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-white/70 hover:bg-pink-600 hover:text-white transition-all border border-white/10 shadow-sm"
                   aria-label="Instagram"
                 >
                   <FiInstagram className="text-lg" />
@@ -104,7 +104,7 @@ export function Footer() {
               </ul>
             </motion.div>
 
-            {/* Services */}
+            {/* Featured Services */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -113,22 +113,23 @@ export function Footer() {
               className="lg:col-span-3"
             >
               <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">
-                Our Services
+                Featured Services
               </h4>
               <ul className="mt-5 space-y-3">
                 {[
-                  { label: "General Dentistry", to: "/services" },
                   { label: "Dental Implants", to: "/implants" },
-                  { label: "Invisalign®", to: "/orthodontics" },
-                  { label: "Cosmetic Dentistry", to: "/cosmetic" },
-                  { label: "Teeth Whitening", to: "/services" },
+                  { label: "Navigated Surgery", to: "/implants" },
+                  { label: "Preventive Care", to: "/general-dentistry" },
+                  { label: "Veneers", to: "/cosmetic" },
+                  { label: "Root Canal", to: "/general-dentistry" },
+                  { label: "Extraction", to: "/general-dentistry" },
                 ].map((item) => (
                   <li key={item.label}>
                     <Link
                       to={item.to}
                       className="group inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
                     >
-                      <FiArrowRight className="text-xs opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                      <FiArrowRight className="text-xs opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-blue-400" />
                       {item.label}
                     </Link>
                   </li>

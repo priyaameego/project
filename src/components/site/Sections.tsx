@@ -390,9 +390,8 @@ export function Orthodontics() {
             Straighten with <span className="text-gradient italic">confidence.</span>
           </h2>
           <p className="mt-6 text-ink-muted text-lg sm:text-xl leading-relaxed">
-            Achieve your best smile with our advanced orthodontic solutions. Whether
-            you choose Invisalign® or ClearCorrect®, we provide customized treatment
-            options designed around your goals.
+            Achieve your best smile with our advanced orthodontic solutions. We provide 
+            customized Invisalign® treatment options designed entirely around your goals.
           </p>
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
             {[
@@ -817,7 +816,7 @@ export function FAQ() {
             Have something else on your mind? Our team is happy to answer any
             questions before your visit.
           </p>
-          <a href="#contact" className="btn-ghost mt-6">Contact our team</a>
+          <Link to="/contact" className="btn-ghost mt-6">Contact our team</Link>
         </div>
         <div className="lg:col-span-7 space-y-3">
           {FAQS.map((f, i) => <FaqItem key={i} q={f.q} a={f.a} defaultOpen={i === 0} />)}

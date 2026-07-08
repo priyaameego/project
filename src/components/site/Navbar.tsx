@@ -17,7 +17,14 @@ const LOGO_SRC = "/logo.png";
 type Item = { label: string; to: string; children?: { label: string; to: string; desc?: string }[] };
 
 const NAV: Item[] = [
-  { label: "Our Family", to: "/our-family" },
+  {
+    label: "Our Family",
+    to: "/meet-the-dentist",
+    children: [
+      { label: "Meet The Dentist", to: "/meet-the-dentist", desc: "Dr. Daniel Juma" },
+      { label: "Meet The Team", to: "/meet-the-team", desc: "Our dedicated staff" },
+    ],
+  },
   {
     label: "Services",
     to: "/services",

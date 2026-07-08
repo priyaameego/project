@@ -14,8 +14,9 @@ import { Route as PaymentPlansRouteImport } from './routes/payment-plans'
 import { Route as PatientPortalRouteImport } from './routes/patient-portal'
 import { Route as PatientFormsRouteImport } from './routes/patient-forms'
 import { Route as PatientCheckinRouteImport } from './routes/patient-checkin'
-import { Route as OurFamilyRouteImport } from './routes/our-family'
 import { Route as OrthodonticsRouteImport } from './routes/orthodontics'
+import { Route as MeetTheTeamRouteImport } from './routes/meet-the-team'
+import { Route as MeetTheDentistRouteImport } from './routes/meet-the-dentist'
 import { Route as ImplantsRouteImport } from './routes/implants'
 import { Route as GeneralDentistryRouteImport } from './routes/general-dentistry'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -49,14 +50,19 @@ const PatientCheckinRoute = PatientCheckinRouteImport.update({
   path: '/patient-checkin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OurFamilyRoute = OurFamilyRouteImport.update({
-  id: '/our-family',
-  path: '/our-family',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const OrthodonticsRoute = OrthodonticsRouteImport.update({
   id: '/orthodontics',
   path: '/orthodontics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeetTheTeamRoute = MeetTheTeamRouteImport.update({
+  id: '/meet-the-team',
+  path: '/meet-the-team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeetTheDentistRoute = MeetTheDentistRouteImport.update({
+  id: '/meet-the-dentist',
+  path: '/meet-the-dentist',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImplantsRoute = ImplantsRouteImport.update({
@@ -103,8 +109,9 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/general-dentistry': typeof GeneralDentistryRoute
   '/implants': typeof ImplantsRoute
+  '/meet-the-dentist': typeof MeetTheDentistRoute
+  '/meet-the-team': typeof MeetTheTeamRoute
   '/orthodontics': typeof OrthodonticsRoute
-  '/our-family': typeof OurFamilyRoute
   '/patient-checkin': typeof PatientCheckinRoute
   '/patient-forms': typeof PatientFormsRoute
   '/patient-portal': typeof PatientPortalRoute
@@ -119,8 +126,9 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/general-dentistry': typeof GeneralDentistryRoute
   '/implants': typeof ImplantsRoute
+  '/meet-the-dentist': typeof MeetTheDentistRoute
+  '/meet-the-team': typeof MeetTheTeamRoute
   '/orthodontics': typeof OrthodonticsRoute
-  '/our-family': typeof OurFamilyRoute
   '/patient-checkin': typeof PatientCheckinRoute
   '/patient-forms': typeof PatientFormsRoute
   '/patient-portal': typeof PatientPortalRoute
@@ -136,8 +144,9 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/general-dentistry': typeof GeneralDentistryRoute
   '/implants': typeof ImplantsRoute
+  '/meet-the-dentist': typeof MeetTheDentistRoute
+  '/meet-the-team': typeof MeetTheTeamRoute
   '/orthodontics': typeof OrthodonticsRoute
-  '/our-family': typeof OurFamilyRoute
   '/patient-checkin': typeof PatientCheckinRoute
   '/patient-forms': typeof PatientFormsRoute
   '/patient-portal': typeof PatientPortalRoute
@@ -154,8 +163,9 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/general-dentistry'
     | '/implants'
+    | '/meet-the-dentist'
+    | '/meet-the-team'
     | '/orthodontics'
-    | '/our-family'
     | '/patient-checkin'
     | '/patient-forms'
     | '/patient-portal'
@@ -170,8 +180,9 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/general-dentistry'
     | '/implants'
+    | '/meet-the-dentist'
+    | '/meet-the-team'
     | '/orthodontics'
-    | '/our-family'
     | '/patient-checkin'
     | '/patient-forms'
     | '/patient-portal'
@@ -186,8 +197,9 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/general-dentistry'
     | '/implants'
+    | '/meet-the-dentist'
+    | '/meet-the-team'
     | '/orthodontics'
-    | '/our-family'
     | '/patient-checkin'
     | '/patient-forms'
     | '/patient-portal'
@@ -203,8 +215,9 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   GeneralDentistryRoute: typeof GeneralDentistryRoute
   ImplantsRoute: typeof ImplantsRoute
+  MeetTheDentistRoute: typeof MeetTheDentistRoute
+  MeetTheTeamRoute: typeof MeetTheTeamRoute
   OrthodonticsRoute: typeof OrthodonticsRoute
-  OurFamilyRoute: typeof OurFamilyRoute
   PatientCheckinRoute: typeof PatientCheckinRoute
   PatientFormsRoute: typeof PatientFormsRoute
   PatientPortalRoute: typeof PatientPortalRoute
@@ -249,18 +262,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PatientCheckinRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/our-family': {
-      id: '/our-family'
-      path: '/our-family'
-      fullPath: '/our-family'
-      preLoaderRoute: typeof OurFamilyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/orthodontics': {
       id: '/orthodontics'
       path: '/orthodontics'
       fullPath: '/orthodontics'
       preLoaderRoute: typeof OrthodonticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meet-the-team': {
+      id: '/meet-the-team'
+      path: '/meet-the-team'
+      fullPath: '/meet-the-team'
+      preLoaderRoute: typeof MeetTheTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meet-the-dentist': {
+      id: '/meet-the-dentist'
+      path: '/meet-the-dentist'
+      fullPath: '/meet-the-dentist'
+      preLoaderRoute: typeof MeetTheDentistRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/implants': {
@@ -323,8 +343,9 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   GeneralDentistryRoute: GeneralDentistryRoute,
   ImplantsRoute: ImplantsRoute,
+  MeetTheDentistRoute: MeetTheDentistRoute,
+  MeetTheTeamRoute: MeetTheTeamRoute,
   OrthodonticsRoute: OrthodonticsRoute,
-  OurFamilyRoute: OurFamilyRoute,
   PatientCheckinRoute: PatientCheckinRoute,
   PatientFormsRoute: PatientFormsRoute,
   PatientPortalRoute: PatientPortalRoute,

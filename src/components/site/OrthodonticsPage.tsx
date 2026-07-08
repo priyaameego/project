@@ -26,12 +26,12 @@ import CONSULT_IMG from "@/assets/ortho-consult.jpg";
 import SMILE_IMG from "@/assets/ortho-smile.jpg";
 
 const BENEFITS = [
-  { icon: FiSmile, title: "Virtually Invisible", desc: "Clear aligners that go unnoticed in everyday life and on camera." },
-  { icon: FiShield, title: "Comfortable Fit", desc: "Smooth, BPA-free medical-grade plastic — no brackets, no wires." },
-  { icon: FiClock, title: "Faster Results", desc: "Most cases complete in 6–18 months with predictable progress." },
-  { icon: FiHeart, title: "Removable", desc: "Eat, brush, and floss naturally. No food restrictions." },
-  { icon: FiActivity, title: "3D Treatment Preview", desc: "See your future smile before treatment even begins." },
-  { icon: FiAward, title: "Diamond Provider Care", desc: "Guided by experienced orthodontic clinicians at McKinney Dental." },
+  { icon: FiSmile, title: "Virtually Invisible", desc: "Custom-made clear aligners that go unnoticed in everyday life — no metal brackets or wires." },
+  { icon: FiShield, title: "Comfortable Fit", desc: "Crafted from smooth, BPA-free SmartTrack® material for a snug, irritation-free experience." },
+  { icon: FiHeart, title: "Removable Convenience", desc: "Enjoy all your favorite foods. Simply remove aligners to eat, brush, and floss normally." },
+  { icon: FiActivity, title: "Advanced Digital Planning", desc: "3D scanning and computer modeling map out your exact treatment before it even begins." },
+  { icon: FiAward, title: "Teens & Adults", desc: "Personalized care plans suitable for growing teen smiles as well as adults seeking refinement." },
+  { icon: FiClock, title: "Faster Results", desc: "Predictable progress with many cases completing in 6 to 18 months under expert guidance." },
 ];
 
 const STEPS = [
@@ -60,7 +60,7 @@ export function OrthodonticsPage() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="bg-[#F6F1E8]">
+    <div className="bg-[#FAFCFF]">
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0B2F5C] via-[#103a70] to-[#1B4A8F] text-white">
 
@@ -100,8 +100,7 @@ export function OrthodonticsPage() {
               transition={{ duration: 0.55, delay: 0.1 }}
               className="mt-5 max-w-xl text-[16px] leading-relaxed text-white/75"
             >
-              Modern, comfortable, virtually invisible orthodontics for adults and teens — designed
-              with precision 3D planning right here at McKinney Dental & Implant Center.
+              Modern, comfortable, virtually invisible orthodontics for adults and teens — using custom-made clear aligners to straighten teeth without metal braces.
             </motion.p>
 
             <motion.div
@@ -170,55 +169,128 @@ export function OrthodonticsPage() {
                 <div className="text-[12px] text-[#6B7C95]">McKinney, TX · 5.0 ★ patient reviews</div>
               </div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="hidden sm:flex absolute -top-6 -right-4 bg-[#0B2F5C] text-white rounded-2xl px-5 py-4 shadow-xl items-center gap-3"
-            >
-              <FiCalendar />
-              <div className="text-xs">
-                <div className="font-semibold">Same-week consults</div>
-                <div className="opacity-75">Mon — Fri</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
+      {/* DOCTOR CREDENTIALS */}
+      <section className="py-24 overflow-hidden relative bg-white">
+        {/* Background accent */}
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none" />
+        
+        <div className="container-x max-w-6xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(11,47,92,0.15)] bg-slate-100 aspect-[4/5]">
+                <img 
+                  src="https://mckinneyddscenter.com/wp-content/uploads/2023/11/DR.-JUMA-PORTRAIT.jpg" 
+                  alt="Dr. Daniel Juma" 
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="absolute -bottom-8 -right-4 sm:-right-8 bg-white border border-[#E5ECF3] rounded-[2rem] p-6 shadow-xl max-w-[260px]"
+              >
+                <div className="flex gap-4 items-center">
+                  <div className="h-14 w-14 shrink-0 rounded-2xl bg-gradient-to-br from-[#1B4A8F] to-[#0B2F5C] text-white flex items-center justify-center">
+                    <FiAward size={24} />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-[#0B2F5C] leading-tight">Invisalign Platinum<br/>Provider</div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-7"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#1B4A8F] mb-4">
+                Meet Your Orthodontic Expert
+              </span>
+              <h2 className="text-[34px] sm:text-[44px] font-semibold text-[#0B2F5C] leading-[1.1] mb-6">
+                Dr. Daniel Juma, <span className="text-[#1B4A8F] font-light">DDS</span>
+              </h2>
+              
+              <div className="space-y-5 text-[#5A6B82] text-[16px] leading-relaxed">
+                <p>
+                  As an elite Platinum Invisalign Provider, Dr. Daniel Juma has successfully transformed thousands of smiles for patients across McKinney and the surrounding areas. His deep expertise in biomechanics and digital treatment planning ensures every patient receives an incredibly precise and predictable outcome.
+                </p>
+                <p>
+                  By leveraging advanced 3D scanning and computer modeling, Dr. Juma creates custom-tailored aligner plans that straighten teeth comfortably, efficiently, and discreetly — allowing both teens and adults to achieve their dream smile without the hassle of traditional metal braces.
+                </p>
+              </div>
+
+              <div className="mt-8 grid sm:grid-cols-2 gap-4">
+                {[
+                  "Platinum Invisalign Certified",
+                  "Advanced Digital Treatment Planning",
+                  "Over 15 Years of Clinical Experience",
+                  "Customized Care for Teens & Adults"
+                ].map((cert, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-[#FAFCFF] border border-[#E5ECF3] rounded-xl p-3.5 shadow-sm">
+                    <FiCheck className="text-[#1B4A8F] shrink-0 text-lg" />
+                    <span className="text-[14.5px] font-medium text-[#0B2F5C]">{cert}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* BENEFITS */}
-      <section className="py-20 sm:py-24">
+      <section className="py-24 bg-[#FAFCFF]">
         <div className="container-x">
-          <div className="max-w-2xl mb-12">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#EAF6F9] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#0B2F5C]">
+          <div className="max-w-3xl mb-16 text-center mx-auto">
+            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#1B4A8F]">
               Why Invisalign
             </span>
-            <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0B2F5C] leading-tight">
+            <h2 className="mt-5 font-display text-[34px] sm:text-[44px] font-semibold text-[#0B2F5C] leading-tight">
               Designed for the way you{" "}
               <span className="italic font-serif text-[#1B4A8F]">live</span>.
             </h2>
-            <p className="mt-4 text-[15.5px] text-[#5A6B82]">
-              Clear aligners are the modern alternative to traditional braces — discreet, comfortable
-              and tailored entirely to your smile.
+            <p className="mt-4 text-[16px] text-[#5A6B82] max-w-2xl mx-auto">
+              Clear aligners are the modern alternative to traditional braces. Discover a discreet, comfortable, and highly effective path to a straighter smile.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {BENEFITS.map((b, i) => (
               <motion.div
                 key={b.title}
-                initial={{ opacity: 0, y: 22 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-                whileHover={{ y: -6 }}
-                className="group rounded-2xl bg-white border border-[#E5ECF3] p-7 shadow-[0_18px_40px_-26px_rgba(11,47,92,0.35)] hover:shadow-[0_30px_55px_-28px_rgba(11,47,92,0.5)] transition-shadow"
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                whileHover={{ y: -8 }}
+                className="group relative rounded-[28px] bg-white border border-[#E5ECF3] p-8 shadow-[0_15px_40px_-20px_rgba(11,47,92,0.1)] hover:shadow-[0_25px_50px_-20px_rgba(11,47,92,0.2)] transition-all duration-500 overflow-hidden"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[#EAF6F9] to-white text-[#2EB6CC] border border-[#E5ECF3] group-hover:from-[#0B2F5C] group-hover:to-[#1B4A8F] group-hover:text-white transition-colors">
-                  <b.icon className="text-xl" />
-                </span>
-                <h3 className="mt-5 font-display text-[19px] font-semibold text-[#0B2F5C]">{b.title}</h3>
-                <p className="mt-2 text-[14px] text-[#6B7C95] leading-relaxed">{b.desc}</p>
+                {/* Subtle gradient hover effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:to-transparent transition-colors duration-500 pointer-events-none" />
+                
+                <div className="relative z-10">
+                  <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[#FAFCFF] text-[#1B4A8F] border border-[#E5ECF3] group-hover:bg-[#1B4A8F] group-hover:text-white group-hover:border-transparent transition-colors duration-500 shadow-sm">
+                    <b.icon className="text-[22px]" />
+                  </span>
+                  <h3 className="mt-6 font-display text-[22px] font-semibold text-[#0B2F5C] group-hover:text-[#1B4A8F] transition-colors">{b.title}</h3>
+                  <p className="mt-3 text-[15px] text-[#6B7C95] leading-relaxed">{b.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -226,29 +298,28 @@ export function OrthodonticsPage() {
       </section>
 
       {/* PROCESS TIMELINE */}
-      <section className="py-20 sm:py-24 bg-gradient-to-b from-[#EFE6D4] via-[#F2EBDC] to-[#F6F1E8]">
+      <section className="py-24 bg-white border-y border-[#E5ECF3]">
         <div className="container-x">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white border border-[#E5ECF3] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#0B2F5C]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#1B4A8F]">
                 Your Journey
               </span>
-              <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0B2F5C] leading-tight">
+              <h2 className="mt-5 font-display text-[34px] sm:text-[44px] font-semibold text-[#0B2F5C] leading-tight">
                 A clear path to your{" "}
                 <span className="italic font-serif text-[#1B4A8F]">best</span> smile.
               </h2>
-              <p className="mt-4 text-[15.5px] text-[#5A6B82] max-w-md">
-                From your first scan to the final reveal — every step is digital, predictable, and
-                doctor-guided.
+              <p className="mt-4 text-[16px] text-[#5A6B82] max-w-md">
+                From your first scan to the final reveal — every step is digital, predictable, and guided directly by Dr. Juma.
               </p>
-              <div className="mt-8 rounded-2xl overflow-hidden border border-[#E5ECF3] shadow-[0_22px_50px_-26px_rgba(11,47,92,0.4)]">
-                <img src={CONSULT_IMG} alt="Doctor consultation" className="w-full h-64 object-cover" />
+              <div className="mt-10 rounded-[2rem] overflow-hidden border border-[#E5ECF3] shadow-[0_20px_50px_-20px_rgba(11,47,92,0.15)]">
+                <img src={CONSULT_IMG} alt="Doctor consultation" className="w-full h-72 object-cover" />
               </div>
             </div>
 
-            <div className="lg:col-span-7 relative">
-              <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-[#2EB6CC] via-[#1B4A8F] to-transparent" />
-              <div className="space-y-6">
+            <div className="lg:col-span-7 relative pt-4">
+              <div className="absolute left-[31px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[#1B4A8F] via-[#1B4A8F]/30 to-transparent" />
+              <div className="space-y-10">
                 {STEPS.map((s, i) => (
                   <motion.div
                     key={s.n}
@@ -256,14 +327,14 @@ export function OrthodonticsPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="relative pl-20"
+                    className="relative pl-24 group"
                   >
-                    <span className="absolute left-0 top-0 grid h-14 w-14 place-items-center rounded-full bg-white border border-[#E5ECF3] shadow-md font-display text-[#0B2F5C] font-semibold">
+                    <span className="absolute left-0 top-1 grid h-16 w-16 place-items-center rounded-full bg-white border-2 border-[#1B4A8F] shadow-[0_10px_20px_-10px_rgba(27,74,143,0.3)] font-display text-[#1B4A8F] text-lg font-bold group-hover:bg-[#1B4A8F] group-hover:text-white transition-colors duration-300">
                       {s.n}
                     </span>
-                    <div className="rounded-2xl bg-white border border-[#E5ECF3] p-6 shadow-[0_18px_40px_-26px_rgba(11,47,92,0.35)]">
-                      <h3 className="font-display text-[20px] font-semibold text-[#0B2F5C]">{s.title}</h3>
-                      <p className="mt-2 text-[14.5px] text-[#6B7C95] leading-relaxed">{s.desc}</p>
+                    <div className="rounded-[24px] bg-[#FAFCFF] border border-[#E5ECF3] p-7 shadow-sm group-hover:shadow-[0_15px_30px_-15px_rgba(11,47,92,0.1)] transition-shadow duration-300">
+                      <h3 className="font-display text-[22px] font-semibold text-[#0B2F5C]">{s.title}</h3>
+                      <p className="mt-2 text-[15.5px] text-[#6B7C95] leading-relaxed">{s.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -273,220 +344,48 @@ export function OrthodonticsPage() {
         </div>
       </section>
 
-      {/* ALIGNER FEATURE */}
-      <section className="py-20 sm:py-24">
-        <div className="container-x">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="rounded-[28px] overflow-hidden shadow-[0_40px_80px_-30px_rgba(11,47,92,0.45)]">
-                <img src={ALIGNER_IMG} alt="Clear aligners on display" className="w-full h-[480px] object-cover" />
-              </div>
-              <div className="absolute -bottom-6 -right-4 sm:right-6 bg-white border border-[#E5ECF3] rounded-2xl p-5 shadow-xl max-w-[240px]">
-                <div className="text-3xl font-display font-semibold text-[#0B2F5C]">
-                  20–22<span className="text-base text-[#6B7C95] font-normal"> hrs</span>
-                </div>
-                <div className="text-xs text-[#6B7C95] mt-1">Daily wear for fastest results</div>
-              </div>
-            </motion.div>
-
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#EAF6F9] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#0B2F5C]">
-                Premium Care
-              </span>
-              <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#0B2F5C] leading-tight">
-                The most advanced{" "}
-                <span className="italic font-serif text-[#1B4A8F]">clear aligner</span> system.
-              </h2>
-              <p className="mt-4 text-[15.5px] text-[#5A6B82]">
-                SmartTrack® material applies gentle, continuous force for predictable tooth movement —
-                planned by your doctor and visualized in 3D before you begin.
-              </p>
-              <ul className="mt-7 space-y-3">
-                {[
-                  "Complimentary smile consultation & 3D preview",
-                  "Treats crowding, spacing, overbite, underbite & crossbite",
-                  "Compatible with whitening for a brighter finish",
-                  "Flexible monthly financing — 0% APR available",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-3">
-                    <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-md bg-[#2EB6CC]/15 text-[#2EB6CC]">
-                      <FiCheck />
-                    </span>
-                    <span className="text-[14.5px] text-[#3F4B5C]">{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BEFORE/AFTER */}
-      <section className="py-20 sm:py-24 bg-gradient-to-b from-[#F6F1E8] via-[#EFE6D4] to-[#F6F1E8]">
-        <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white border border-[#E5ECF3] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#0B2F5C]">
-              Real Results
-            </span>
-            <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0B2F5C] leading-tight">
-              Smiles transformed at{" "}
-              <span className="italic font-serif text-[#1B4A8F]">McKinney Dental</span>.
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-            {RESULTS.map((r, i) => (
-              <motion.article
-                key={r.label}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -8 }}
-                className="group rounded-[22px] overflow-hidden bg-white border border-[#E5ECF3] shadow-[0_22px_55px_-28px_rgba(11,47,92,0.45)] hover:shadow-[0_30px_65px_-26px_rgba(11,47,92,0.55)] transition-shadow"
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={r.src}
-                    alt={r.label}
-                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-5 flex items-center justify-between">
-                  <div>
-                    <h3 className="font-display text-[17px] font-semibold text-[#0B2F5C]">{r.label}</h3>
-                    <p className="text-[12px] text-[#6B7C95] mt-0.5">Treatment · {r.time}</p>
-                  </div>
-                  <span className="grid h-9 w-9 place-items-center rounded-full bg-[#EAF6F9] text-[#2EB6CC] group-hover:bg-[#2EB6CC] group-hover:text-white transition-colors">
-                    <FiArrowUpRight />
-                  </span>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#0B2F5C] hover:text-[#2EB6CC] transition-colors"
-            >
-              View the full smile gallery <FiArrowUpRight />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 sm:py-24">
-        <div className="container-x grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#EAF6F9] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#0B2F5C]">
-              FAQ
-            </span>
-            <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0B2F5C] leading-tight">
-              Questions, <span className="italic font-serif text-[#1B4A8F]">answered</span>.
-            </h2>
-            <p className="mt-4 text-[15.5px] text-[#5A6B82] max-w-md">
-              Still curious? Our orthodontic team is happy to walk you through every detail at your
-              complimentary consultation.
-            </p>
-            <div className="mt-8 rounded-2xl overflow-hidden border border-[#E5ECF3] shadow-md">
-              <img src={SMILE_IMG} alt="Patient smiling" className="w-full h-64 object-cover" />
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 space-y-3">
-            {FAQS.map((f, i) => {
-              const isOpen = open === i;
-              return (
-                <motion.div
-                  key={f.q}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="rounded-2xl bg-white border border-[#E5ECF3] overflow-hidden shadow-[0_14px_36px_-26px_rgba(11,47,92,0.35)]"
-                >
-                  <button
-                    onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer"
-                  >
-                    <span className="font-display text-[17px] font-semibold text-[#0B2F5C]">{f.q}</span>
-                    <span
-                      className={`grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#E5ECF3] text-[#0B2F5C] transition-transform ${
-                        isOpen ? "rotate-180 bg-[#0B2F5C] text-white border-[#0B2F5C]" : ""
-                      }`}
-                    >
-                      <FiChevronDown />
-                    </span>
-                  </button>
-                  <motion.div
-                    initial={false}
-                    animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <p className="px-5 sm:px-6 pb-6 text-[14.5px] text-[#6B7C95] leading-relaxed">{f.a}</p>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="pb-24">
-        <div className="container-x">
+      <section className="py-24 bg-[#FAFCFF]">
+        <div className="container-x max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#0B2F5C] via-[#143F7A] to-[#1B4A8F] px-8 sm:px-14 py-14"
+            transition={{ duration: 0.7 }}
+            className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#0B2F5C] via-[#103a70] to-[#1B4A8F] px-8 sm:px-16 py-16 sm:py-20 text-center shadow-[0_30px_60px_-15px_rgba(11,47,92,0.3)]"
           >
             <div
               aria-hidden
-              className="absolute -right-24 -top-24 h-72 w-72 rounded-full"
-              style={{ background: "radial-gradient(closest-side, rgba(46,182,204,0.35), transparent)" }}
+              className="absolute -right-32 -top-32 h-96 w-96 rounded-full"
+              style={{ background: "radial-gradient(closest-side, rgba(46,182,204,0.25), transparent)" }}
             />
             <div
               aria-hidden
-              className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full"
-              style={{ background: "radial-gradient(closest-side, rgba(123,208,224,0.25), transparent)" }}
+              className="absolute -left-32 -bottom-32 h-96 w-96 rounded-full"
+              style={{ background: "radial-gradient(closest-side, rgba(233,199,123,0.15), transparent)" }}
             />
-            <div className="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="font-display text-3xl sm:text-4xl lg:text-[44px] font-semibold text-white leading-tight">
-                  Start your Invisalign journey{" "}
-                  <span className="italic font-serif text-[#7BD0E0]">today</span>.
-                </h3>
-                <p className="mt-4 text-white/75 max-w-lg text-[15.5px]">
-                  Complimentary consultation · 3D smile preview · Transparent pricing & financing.
-                </p>
-              </div>
-              <div className="flex flex-wrap lg:justify-end gap-3">
+            <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 backdrop-blur px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-white shadow-sm mb-6">
+                Take the First Step
+              </span>
+              <h3 className="font-display text-[36px] sm:text-[48px] font-semibold text-white leading-[1.1] tracking-tight">
+                Schedule your <span className="italic font-serif text-[#E9C77B]">Invisalign</span> consultation today.
+              </h3>
+              <p className="mt-6 text-white/80 text-[16px] leading-relaxed">
+                Join the thousands of patients who have achieved their dream smiles with Dr. Juma. Let’s map out a customized treatment plan that works for your goals and lifestyle.
+              </p>
+              <div className="mt-10 flex flex-wrap justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 rounded-full pl-6 pr-2 py-2.5 text-sm font-semibold text-[#0B2F5C] bg-white hover:bg-[#EAF6F9] transition-colors"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-[15px] tracking-wide font-semibold text-[#0B2F5C] bg-white hover:bg-[#F3D88F] hover:shadow-[0_15px_30px_-10px_rgba(233,199,123,0.4)] transition-all duration-300"
                 >
-                  Book Consultation
-                  <span className="grid h-9 w-9 place-items-center rounded-full bg-[#2EB6CC] text-white group-hover:rotate-45 transition-transform">
-                    <FiArrowUpRight />
-                  </span>
+                  Book My Consultation
                 </Link>
                 <a
                   href="tel:+19728336825"
-                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white border border-white/30 hover:border-[#7BD0E0] hover:text-[#7BD0E0] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-[15px] tracking-wide font-semibold text-white border-2 border-white/30 hover:border-white transition-all duration-300"
                 >
-                  (972) 833-6825
+                  Call (972) 833-6825
                 </a>
               </div>
             </div>
