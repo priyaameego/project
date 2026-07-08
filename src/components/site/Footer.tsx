@@ -33,19 +33,13 @@ export function Footer() {
               transition={{ duration: 0.5 }}
               className="lg:col-span-4"
             >
-              <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-white font-display font-bold text-xl shadow-lg">
-                  M
-                </div>
-                <div>
-                  <div className="font-display font-semibold text-white text-lg leading-tight">
-                    McKinney Dental
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-white/50">
-                    & Implant Center
-                  </div>
-                </div>
-              </div>
+              <Link to="/" className="inline-block">
+                <img 
+                  src="/logo.png" 
+                  alt="McKinney Dental Center" 
+                  className="h-14 w-auto brightness-0 invert opacity-90" 
+                />
+              </Link>
               <p className="mt-5 text-white/60 text-sm leading-relaxed max-w-xs">
                 A modern dental practice committed to creating beautiful,
                 healthy smiles with advanced technology and compassionate care.
