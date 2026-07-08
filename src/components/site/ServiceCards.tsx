@@ -4,26 +4,29 @@ import { GiDiamonds, GiMagicSwirl } from "react-icons/gi";
 import { FaTooth } from "react-icons/fa";
 import { FiArrowRight, FiShield } from "react-icons/fi";
 import orthoImg from "@/assets/ortho-smile.jpg";
+import implantImg from "@/assets/implant-hero.jpg";
+import generalImg from "@/assets/general-care.jpg";
+import cosmeticImg from "@/assets/cosmetic-veneers.jpg";
 
 const CARDS = [
   {
     title: "Dental Implants",
     subtitle: "Permanent tooth replacement",
-    img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80",
+    img: implantImg,
     icon: <FaTooth />,
     to: "/implants",
   },
   {
     title: "General Dentistry",
     subtitle: "Healthy smiles, every visit",
-    img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80",
+    img: generalImg,
     icon: <FiShield />,
     to: "/general-dentistry",
   },
   {
     title: "Cosmetic Dentistry",
     subtitle: "Veneers, whitening & more",
-    img: "https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=800&q=80",
+    img: cosmeticImg,
     icon: <GiDiamonds />,
     to: "/cosmetic",
   },

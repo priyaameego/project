@@ -106,9 +106,9 @@ export function About() {
             transition={{ duration: 0.7 }}
             className="relative rounded-[2rem] overflow-hidden shadow-[var(--shadow-glow)] aspect-[4/5]"
           >
-            <img
-              src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern dental office interior"
+            <img 
+              src={implantScan}
+              alt="3D Dental Imaging"
               className="h-full w-full object-cover"
             />
           </motion.div>
@@ -119,9 +119,9 @@ export function About() {
             transition={{ delay: 0.2 }}
             className="hidden md:block absolute -right-6 -bottom-10 w-56 rounded-2xl overflow-hidden shadow-[var(--shadow-glow)] border-4 border-white"
           >
-            <img
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80"
-              alt="Dental treatment room"
+            <img 
+              src={implantScan}
+              alt="Advanced dental technology"
               className="h-full w-full object-cover aspect-square"
             />
           </motion.div>
@@ -170,15 +170,22 @@ export function About() {
 }
 
 /* ---------- Services ---------- */
+import genCare from "@/assets/general-care.jpg";
+import implantHero from "@/assets/implant-hero.jpg";
+import orthoSmile from "@/assets/ortho-smile.jpg";
+import alignerImg from "@/assets/ortho-aligner.jpg";
+import cosmeticHero from "@/assets/cosmetic-hero.jpg";
+import implantScan from "@/assets/implant-scan.jpg";
+
 const SERVICES = [
-  { title: "General Dentistry", desc: "Cleanings, exams and family care.", img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80", icon: <FiSmile /> },
-  { title: "Dental Implants", desc: "Permanent tooth replacement.", img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80", icon: <FiActivity /> },
-  { title: "Orthodontics", desc: "Modern brackets & clear aligners.", img: "https://images.unsplash.com/photo-1581585504594-d6f7a4d1ad7e?auto=format&fit=crop&w=900&q=80", icon: <FiSettings /> },
-  { title: "Invisalign®", desc: "Discreet, removable, effective.", img: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80", icon: <FiZap /> },
-  { title: "Cosmetic Dentistry", desc: "Smile makeovers that fit you.", img: "https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=900&q=80", icon: <FiStar /> },
-  { title: "Crowns & Veneers", desc: "Natural-looking restorations.", img: "https://images.unsplash.com/photo-1581595220892-10e30379435b?auto=format&fit=crop&w=900&q=80", icon: <FiAward /> },
-  { title: "Teeth Whitening", desc: "Brighten in a single visit.", img: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=900&q=80", icon: <FiCamera /> },
-  { title: "Digital Dentistry", desc: "3D imaging & guided precision.", img: "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=900&q=80", icon: <FiZap /> },
+  { title: "General Dentistry", desc: "Cleanings, exams and family care.", img: genCare, icon: <FiSmile />, to: "/general-dentistry" },
+  { title: "Dental Implants", desc: "Permanent tooth replacement.", img: implantHero, icon: <FiActivity />, to: "/implants" },
+  { title: "Orthodontics", desc: "Modern brackets & clear aligners.", img: orthoSmile, icon: <FiSettings />, to: "/orthodontics" },
+  { title: "Invisalign®", desc: "Discreet, removable, effective.", img: alignerImg, icon: <FiZap />, to: "/orthodontics" },
+  { title: "Cosmetic Dentistry", desc: "Smile makeovers that fit you.", img: cosmeticHero, icon: <FiStar />, to: "/cosmetic" },
+  { title: "Crowns & Veneers", desc: "Natural-looking restorations.", img: crownImg, icon: <FiAward />, to: "/cosmetic" },
+  { title: "Teeth Whitening", desc: "Brighten in a single visit.", img: makeoverImg, icon: <FiCamera />, to: "/cosmetic" },
+  { title: "Digital Dentistry", desc: "3D imaging & guided precision.", img: implantScan, icon: <FiZap />, to: "/general-dentistry" },
 ];
 
 export function Services() {
@@ -198,34 +205,37 @@ export function Services() {
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {SERVICES.map((s, i) => (
-            <motion.a
+            <motion.div
               key={s.title}
-              href="#appointment"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="group flex flex-col relative overflow-hidden rounded-[2rem] bg-white shadow-[0_20px_50px_-25px_rgba(11,37,69,0.2)] hover:shadow-[0_40px_80px_-25px_rgba(15,76,129,0.3)] border border-border/40 transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="relative h-48 sm:h-56 overflow-hidden">
-                <img src={s.img} alt={s.title} className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                
-                <div className="absolute top-4 left-4 grid h-11 w-11 place-items-center rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white text-xl shadow-lg">
-                  {s.icon}
+              <Link
+                to={s.to}
+                className="group flex flex-col h-full relative overflow-hidden rounded-[2rem] bg-white shadow-[0_20px_50px_-25px_rgba(11,37,69,0.2)] hover:shadow-[0_40px_80px_-25px_rgba(15,76,129,0.3)] border border-border/40 transition-all duration-500 hover:-translate-y-2"
+              >
+                <div className="relative h-48 sm:h-56 overflow-hidden">
+                  <img src={s.img} alt={s.title} className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                  
+                  <div className="absolute top-4 left-4 grid h-11 w-11 place-items-center rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white text-xl shadow-lg">
+                    {s.icon}
+                  </div>
+                  
+                  <div className="absolute bottom-4 left-5 right-5">
+                    <h3 className="font-display font-semibold text-xl text-white tracking-wide">{s.title}</h3>
+                  </div>
                 </div>
-                
-                <div className="absolute bottom-4 left-5 right-5">
-                  <h3 className="font-display font-semibold text-xl text-white tracking-wide">{s.title}</h3>
+                <div className="p-5 sm:p-6 flex flex-col flex-1 bg-white">
+                  <p className="text-[14.5px] text-ink-muted leading-relaxed flex-1">{s.desc}</p>
+                  <div className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-primary group-hover:gap-3 transition-all">
+                    Learn More <FiArrowRight />
+                  </div>
                 </div>
-              </div>
-              <div className="p-5 sm:p-6 flex flex-col flex-1 bg-white">
-                <p className="text-[14.5px] text-ink-muted leading-relaxed flex-1">{s.desc}</p>
-                <div className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-primary group-hover:gap-3 transition-all">
-                  Learn More <FiArrowRight />
-                </div>
-              </div>
-            </motion.a>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -285,12 +295,9 @@ export function Implants() {
         <Reveal>
           <div className="order-1 lg:order-2 relative">
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-25px_rgba(11,37,69,0.4)] aspect-[4/5] border-4 border-white">
-              <video 
-                src={implant3dVideo.url} 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
+              <img 
+                src={implantHero} 
+                alt="Dental Implants"
                 className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545]/70 via-transparent to-transparent opacity-80" />
@@ -300,10 +307,10 @@ export function Implants() {
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="rounded-[2rem] bg-white/95 backdrop-blur-xl px-8 py-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] text-center pointer-events-auto border border-white/50"
+                  className="rounded-3xl bg-white/95 backdrop-blur-xl px-6 py-4 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] text-center pointer-events-auto border border-white/50"
                 >
-                  <img src={logoImg.url} alt="McKinney Dental Center" className="h-16 w-auto mx-auto mb-2" />
-                  <div className="text-[11px] tracking-[0.25em] uppercase text-primary font-bold">
+                  <img src="/logo.png" alt="McKinney Dental Center" className="h-10 sm:h-12 w-auto mx-auto mb-1.5" />
+                  <div className="text-[10px] tracking-[0.25em] uppercase text-primary font-bold">
                     Implant Center
                   </div>
                 </motion.div>
@@ -410,10 +417,10 @@ export function Orthodontics() {
         </div>
         <Reveal>
           <div className="order-1 lg:order-2 relative">
-            <div className="relative grid grid-cols-2 gap-5">
-              <img src="https://images.unsplash.com/photo-1629909614553-61ba472be987?auto=format&fit=crop&w=900&q=80" alt="Clear aligners treatment" className="rounded-[2rem] shadow-[0_20px_40px_-20px_rgba(11,37,69,0.3)] aspect-[3/4] object-cover row-span-2 w-full h-full" />
-              <img src="https://images.unsplash.com/photo-1598331668826-20cefac91e06?auto=format&fit=crop&w=800&q=80" alt="Orthodontic consultation" className="rounded-[2rem] shadow-[0_15px_30px_-15px_rgba(11,37,69,0.2)] aspect-square object-cover w-full h-full" />
-              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Modern dental office" className="rounded-[2rem] shadow-[0_15px_30px_-15px_rgba(11,37,69,0.2)] aspect-square object-cover w-full h-full" />
+            <div className="grid grid-cols-2 gap-4 h-full relative z-10">
+              <img src={alignerImg} alt="Clear aligners treatment" className="rounded-[2rem] shadow-[0_20px_40px_-20px_rgba(11,37,69,0.3)] aspect-[3/4] object-cover row-span-2 w-full h-full" />
+              <img src={orthoSmile} alt="Orthodontic consultation" className="rounded-[2rem] shadow-[0_15px_30px_-15px_rgba(11,37,69,0.2)] aspect-square object-cover w-full h-full" />
+              <img src={genCare} alt="Modern dental office" className="rounded-[2rem] shadow-[0_15px_30px_-15px_rgba(11,37,69,0.2)] aspect-square object-cover w-full h-full" />
             </div>
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -465,8 +472,8 @@ export function Cosmetic() {
             className="lg:col-span-5 relative rounded-[32px] overflow-hidden shadow-[0_20px_60px_-15px_rgba(11,47,92,0.15)] group min-h-[500px]"
           >
             <img 
-              src="https://images.unsplash.com/photo-1590623321556-9477e682d334?auto=format&fit=crop&w=1000&q=80" 
-              alt="Complete smile makeover" 
+              src={cosmeticHero} 
+              alt="Smile Makeover" 
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-[1.03]" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C] via-[#0B2F5C]/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-80" />
@@ -487,33 +494,29 @@ export function Cosmetic() {
           {/* Grid of Services */}
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-8">
             {[
-              { 
-                t: "Porcelain Veneers", 
-                desc: "Ultra-thin, custom crafted ceramics for a flawless, natural finish.", 
-                img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80", 
-                badge: null 
+              {
+                title: "Porcelain Veneers",
+                desc: "Custom-crafted thin porcelain shells to instantly correct chips, gaps, and severe discoloration for a flawless smile.",
+                img: cosmeticHero, 
               },
-              { 
-                t: "Custom Crowns", 
-                desc: "Seamless and durable restorations that protect and beautify.", 
-                img: "https://images.unsplash.com/photo-1598331668826-20cefac91e06?auto=format&fit=crop&w=800&q=80", 
-                badge: null 
+              {
+                title: "Professional Whitening",
+                desc: "Achieve a dramatically brighter smile in just one visit with our advanced Zoom! whitening technology.",
+                img: makeoverImg, 
               },
-              { 
-                t: "ZOOM Whitening", 
-                desc: "Professional in-office whitening for instantly brighter smiles.", 
-                img: "https://images.unsplash.com/photo-1520975867597-0af37a22e31e?auto=format&fit=crop&w=800&q=80", 
-                badge: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Philips_Zoom_logo.svg/320px-Philips_Zoom_logo.svg.png" 
+              {
+                title: "Dental Crowns",
+                desc: "Restore damaged or decayed teeth with natural-looking, durable ceramic crowns that blend perfectly.",
+                img: crownImg, 
               },
-              { 
-                t: "3D Smile Design", 
-                desc: "Digital previews of your potential outcome before treatment begins.", 
-                img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80", 
-                badge: null 
-              },
-            ].map((c, i) => (
+              {
+                title: "Full Makeovers",
+                desc: "Comprehensive treatment plans combining multiple procedures to completely transform your smile and confidence.",
+                img: genCare, 
+              }
+            ].map((s, i) => (
               <motion.div
-                key={c.t}
+                key={s.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -521,27 +524,20 @@ export function Cosmetic() {
                 className="group relative overflow-hidden rounded-[28px] shadow-[0_15px_40px_-15px_rgba(11,47,92,0.1)] hover:shadow-[0_25px_50px_-15px_rgba(11,47,92,0.2)] transition-all duration-500 aspect-square sm:aspect-auto border border-white"
               >
                 <img 
-                  src={c.img} 
-                  alt={c.t} 
+                  src={s.img} 
+                  alt={s.title} 
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" 
                 />
                 {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/95 via-[#0B2F5C]/40 to-transparent opacity-85 group-hover:opacity-75 transition-opacity duration-500" />
                 
-                {/* Brand Badge (e.g. ZOOM) */}
-                {c.badge && (
-                  <div className="absolute top-5 right-5 rounded-2xl bg-white/95 backdrop-blur-md px-4 py-2.5 shadow-xl border border-white">
-                    <img src={c.badge} alt="Brand Partner" className="h-[22px] w-auto" />
-                  </div>
-                )}
-                
                 {/* Content */}
                 <div className="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500">
                   <h4 className="font-display text-white text-[24px] font-semibold tracking-wide mb-2 group-hover:-translate-y-1 transition-transform duration-500">
-                    {c.t}
+                    {s.title}
                   </h4>
                   <p className="text-white/80 text-[15px] leading-relaxed opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                    {c.desc}
+                    {s.desc}
                   </p>
                 </div>
               </motion.div>
@@ -575,9 +571,9 @@ export function Office() {
             className="relative"
           >
             <div className="relative rounded-[2rem] overflow-hidden shadow-[var(--shadow-glow)] aspect-[4/3]">
-              <img
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"
-                alt="Modern dental office reception and waiting area"
+              <img 
+                src={genCare}
+                alt="General Dentistry"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />

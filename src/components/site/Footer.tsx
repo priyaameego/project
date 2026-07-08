@@ -86,7 +86,7 @@ export function Footer() {
               <ul className="mt-5 space-y-3">
                 {[
                   { label: "Home", to: "/" },
-                  { label: "Our Family", to: "/our-family" },
+                  { label: "Our Family", to: "/meet-the-team" },
                   { label: "Services", to: "/services" },
                   { label: "Gallery", to: "/gallery" },
                   { label: "Contact Us", to: "/contact" },
