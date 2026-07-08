@@ -3,6 +3,7 @@ import { FiChevronDown, FiCheckCircle } from "react-icons/fi";
 import { PageHeader } from "@/components/site/PageHeader";
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
+import implantScan from "@/assets/implant-scan.jpg";
 
 const ACCORDION_ITEMS = [
   {
@@ -147,8 +148,8 @@ export function ImplantsPage() {
             className="order-2 lg:order-1 relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-20px_rgba(11,47,92,0.2)] aspect-[4/3] w-full"
           >
             <img 
-              src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1000&q=80" 
-              alt="X-Guide Implant Navigation screen" 
+              src={implantScan} 
+              alt="Advanced 3D X-Guide Navigation System" 
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 to-transparent" />

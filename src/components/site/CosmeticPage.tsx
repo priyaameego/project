@@ -14,30 +14,31 @@ import {
   FiShield,
   FiClock,
 } from "react-icons/fi";
-import g1 from "@/assets/gallery-1.png.asset.json";
-import g2 from "@/assets/gallery-2.png.asset.json";
-import g3 from "@/assets/gallery-3.png.asset.json";
+import cosmeticHero from "@/assets/cosmetic-hero.jpg";
+import veneersImg from "@/assets/cosmetic-veneers.jpg";
+import crownImg from "@/assets/cosmetic-crown.jpg";
+import makeoverImg from "@/assets/cosmetic-makeover.jpg";
 
 const TREATMENTS = [
   {
     icon: FiStar,
     title: "Porcelain Veneers",
     desc: "Ultra-thin, hand-crafted ceramic shells that reshape, brighten, and perfect your smile with natural brilliance.",
-    img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+    img: veneersImg,
     tag: "Signature",
   },
   {
     icon: FiShield,
     title: "Cosmetic Crowns",
     desc: "Zirconia and E-max crowns engineered for strength, translucency, and a flawless aesthetic finish.",
-    img: "https://images.unsplash.com/photo-1598331668826-20cefac91e06?auto=format&fit=crop&w=800&q=80",
+    img: crownImg,
     tag: "Restorative",
   },
   {
     icon: FiSmile,
     title: "Smile Makeovers",
     desc: "A fully personalized treatment plan combining veneers, professional whitening, and precise contouring.",
-    img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80",
+    img: makeoverImg,
     tag: "Full Design",
   },
 ];
@@ -160,7 +161,7 @@ export function CosmeticPage() {
               className="lg:col-span-5 relative"
             >
               <div className="relative rounded-[32px] overflow-hidden shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] border border-white/10 group">
-                <img src="https://images.unsplash.com/photo-1590623321556-9477e682d334?auto=format&fit=crop&w=1000&q=80" alt="Radiant cosmetic dentistry smile" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
+                <img src={cosmeticHero} alt="Radiant cosmetic dentistry smile" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 via-[#0B2F5C]/10 to-transparent" />
               </div>
               <motion.div
@@ -325,7 +326,7 @@ export function CosmeticPage() {
               className="relative rounded-[22px] overflow-hidden shadow-[0_22px_55px_-28px_rgba(11,47,92,0.4)]"
             >
               <img
-                src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=800&q=80"
+                src={makeoverImg}
                 alt="Professional teeth whitening treatment"
                 className="w-full h-[380px] object-cover"
               />
@@ -369,7 +370,7 @@ export function CosmeticPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[g1.url, g2.url, g3.url].map((src, i) => (
+            {[veneersImg, crownImg, makeoverImg].map((src, i) => (
               <motion.div
                 key={src}
                 initial={{ opacity: 0, y: 20 }}
