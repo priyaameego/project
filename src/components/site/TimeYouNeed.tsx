@@ -114,10 +114,10 @@ export function TimeYouNeed() {
                 {/* doctor silhouette wash */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+                  className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80')",
+                      "url('http://mckinneyddscenter.com/wp-content/uploads/2021/11/7F8A4027_1-1.png')",
                   }}
                 />
                 {/* shine sweep */}

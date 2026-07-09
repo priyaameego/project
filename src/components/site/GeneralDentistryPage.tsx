@@ -82,7 +82,7 @@ export function GeneralDentistryPage() {
                 aria-hidden
                 className="absolute left-0 top-1/2 -translate-y-1/2 h-12 w-1 rounded-r bg-[#0F4C81] opacity-0 group-hover:opacity-100 transition-opacity"
               />
-              <h2 className="font-display text-3xl sm:text-5xl font-semibold text-[#3D7BD9] tracking-tight">
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold text-[#1B4A8F] tracking-tight">
                 {s.title}
               </h2>
               <p className="mt-5 text-[15px] sm:text-[17px] leading-[1.85] text-slate-500 max-w-5xl">

@@ -4,7 +4,7 @@ import implantImg from "@/assets/implant-hero.jpg";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen w-full flex items-center overflow-hidden bg-[#fafafa] pt-24 pb-16 lg:pt-32">
+    <section className="relative h-[70vh] min-h-[70vh] w-full flex items-center overflow-hidden bg-[#fafafa] pt-24 pb-16 lg:pt-32">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');

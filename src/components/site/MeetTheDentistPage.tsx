@@ -62,7 +62,7 @@ export function MeetTheDentistPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 text-white">
-                <h2 className="text-3xl font-display font-semibold">Dr. Daniel Juma</h2>
+                <h2 className="text-3xl font-display font-semibold text-white">Dr. Daniel Juma</h2>
                 <p className="text-blue-200 font-medium tracking-widest uppercase text-xs mt-1">Founder & Lead Dentist</p>
               </div>
             </motion.div>
@@ -135,7 +135,7 @@ export function MeetTheDentistPage() {
               >
                 Must Read
               </motion.span>
-              <h3 className="text-3xl lg:text-4xl font-display font-semibold leading-tight mb-5 group-hover:text-blue-200 transition-colors duration-500">
+              <h3 className="text-3xl lg:text-4xl font-display font-semibold leading-tight mb-5 text-white">
                 The Future of Implant Dentistry
               </h3>
               <p className="text-slate-300 text-lg mb-8 leading-relaxed font-light">

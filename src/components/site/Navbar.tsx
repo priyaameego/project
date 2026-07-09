@@ -250,30 +250,26 @@ export function Navbar() {
 
             {/* CTA cluster */}
             <div className="flex items-center gap-3">
-              <a
-                href="tel:+19728336825"
-                className="hidden md:inline-flex items-center gap-2 text-[13.5px] font-medium text-[#334155] hover:text-[#0B2A33] transition-colors"
-              >
-                <span className="grid h-9 w-9 place-items-center rounded-full" style={{ background: `${ACCENT}14`, color: ACCENT }}>
-                  <FiPhone className="text-base" />
-                </span>
-                <span className="hidden xl:flex flex-col leading-tight">
-                  <span className="text-[10.5px] uppercase tracking-[0.18em] text-[#94A3B8]">Call us</span>
-                  <span className="font-semibold text-[#0B2A33]">(972) 833-6825</span>
-                </span>
-              </a>
-
-              <Link
-                to="/contact"
-                className="inline-flex group relative items-center gap-1.5 sm:gap-2 rounded-full pl-3 sm:pl-5 pr-1.5 sm:pr-2 py-1.5 sm:py-2 text-[12px] sm:text-[13.5px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(14,124,140,0.55)] hover:shadow-[0_16px_32px_-10px_rgba(14,124,140,0.7)] transition-all whitespace-nowrap"
-                style={{ background: `linear-gradient(110deg, ${ACCENT} 0%, ${INK} 100%)` }}
-              >
-                <span className="sm:hidden">Book</span>
-                <span className="hidden sm:inline">Book Appointment</span>
-                <span className="grid h-6 w-6 sm:h-8 sm:w-8 place-items-center rounded-full text-white group-hover:rotate-45 transition-transform duration-300" style={{ background: `${GOLD}` , color: INK }}>
-                  <FiArrowUpRight className="text-xs sm:text-base" />
-                </span>
-              </Link>
+              <div className="hidden sm:flex items-center gap-2">
+                <a
+                  href="https://mckinneyddscenter.com/wp-content/uploads/2024/03/McKinney-Dental-Implant-MCK-TD-Profile-24-3.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-[4px] px-6 py-2.5 text-[15px] font-medium text-white shadow-sm transition-opacity hover:opacity-90 whitespace-nowrap"
+                  style={{ background: `linear-gradient(110deg, ${INK} 0%, #103E48 45%, ${ACCENT} 100%)` }}
+                >
+                  Must Read
+                </a>
+                <a
+                  href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-[4px] px-6 py-2.5 text-[15px] font-medium text-white shadow-sm transition-opacity hover:opacity-90 whitespace-nowrap"
+                  style={{ background: `linear-gradient(110deg, ${INK} 0%, #103E48 45%, ${ACCENT} 100%)` }}
+                >
+                  <span className="text-xl leading-none font-bold">+</span> Make An Appointment
+                </a>
+              </div>
 
               <button
                 className="lg:hidden grid h-11 w-11 place-items-center rounded-full border border-[#0B2A33]/15 text-[#0B2A33] hover:bg-[#0B2A33]/5 transition-colors"
@@ -398,14 +394,16 @@ export function Navbar() {
               </nav>
 
               <div className="px-6 py-5 border-t border-[#0B2A33]/8 space-y-3" style={{ background: `linear-gradient(180deg, ${INK} 0%, #103E48 100%)` }}>
-                <Link
-                  to="/contact"
+                <a
+                  href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(14,124,140,0.6)]"
                   style={{ background: `linear-gradient(110deg, ${ACCENT}, ${GOLD})` }}
                 >
                   Book Appointment <FiArrowUpRight />
-                </Link>
+                </a>
                 <a
                   href="tel:+19728336825"
                   className="flex items-center justify-center gap-2 text-sm font-medium text-white/85"

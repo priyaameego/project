@@ -62,7 +62,7 @@ export function CommunityService() {
               className="relative overflow-hidden rounded-3xl shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80"
+                src="https://mckinneyddscenter.com/wp-content/uploads/2021/10/GivinfBack.png"
                 alt="Dentist hugging a young patient during a community service trip"
                 className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
               />

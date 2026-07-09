@@ -1,4 +1,5 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { Turnstile } from '@marsidev/react-turnstile';
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
@@ -708,9 +709,9 @@ export function Testimonials() {
 }
 
 /* ---------- Appointment ---------- */
-export function Appointment() {
+export function Appointment({ className = "section-pad" }: { className?: string }) {
   return (
-    <section id="appointment" className="section-pad">
+    <section id="appointment" className={className}>
       <div className="container-x">
         <div className="relative overflow-hidden rounded-[2.5rem] shadow-[var(--shadow-glow)]" style={{ background: 'var(--gradient-primary)' }}>
           <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-accent/30 blur-3xl" />
@@ -744,31 +745,35 @@ export function Appointment() {
 
             <form
               onSubmit={(e) => { e.preventDefault(); alert("Thanks! We'll be in touch shortly."); }}
-              className="bg-white rounded-3xl p-6 sm:p-8 shadow-[var(--shadow-glow)] text-ink"
+              className="text-white flex flex-col justify-center"
             >
-              <div className="font-display text-xl font-semibold">Request an Appointment</div>
-              <div className="mt-5 grid sm:grid-cols-2 gap-4">
-                <Field label="Full Name" name="name" placeholder="Jane Doe" required />
-                <Field label="Phone" name="phone" placeholder="(555) 123-4567" required />
-                <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
-                <Field label="Preferred Date" name="date" type="date" required />
-                <div className="sm:col-span-2">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Service</label>
-                  <select required className="mt-1.5 w-full rounded-xl border border-border px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-secondary">
-                    <option>General Checkup</option>
-                    <option>Dental Implants</option>
-                    <option>Invisalign / Orthodontics</option>
-                    <option>Cosmetic Consultation</option>
-                    <option>Whitening</option>
-                  </select>
+              <div className="font-display text-4xl sm:text-5xl mb-8">Get in touch with us</div>
+              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+                <div>
+                  <label className="block text-white/80 text-sm mb-2">Full name</label>
+                  <input type="text" className="w-full rounded-md border-none px-4 py-3 text-ink bg-white focus:outline-none focus:ring-2 focus:ring-accent" />
+                </div>
+                <div>
+                  <label className="block text-white/80 text-sm mb-2">Your phone</label>
+                  <input type="tel" className="w-full rounded-md border-none px-4 py-3 text-ink bg-white focus:outline-none focus:ring-2 focus:ring-accent" />
+                </div>
+                <div>
+                  <label className="block text-white/80 text-sm mb-2">Date</label>
+                  <input type="date" className="w-full rounded-md border-none px-4 py-3 text-ink bg-white focus:outline-none focus:ring-2 focus:ring-accent" />
+                </div>
+                <div>
+                  <label className="block text-white/80 text-sm mb-2">Main concern</label>
+                  <input type="text" className="w-full rounded-md border-none px-4 py-3 text-ink bg-white focus:outline-none focus:ring-2 focus:ring-accent" />
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Message</label>
-                  <textarea rows={3} placeholder="Tell us about your goals" className="mt-1.5 w-full rounded-xl border border-border px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-secondary" />
+                  <label className="block text-white/80 text-sm mb-2">Additional description of need</label>
+                  <textarea rows={5} className="w-full rounded-md border-none px-4 py-3 text-ink bg-white focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
                 </div>
               </div>
-              <button className="btn-primary mt-6 w-full">Request Appointment</button>
-              <div className="text-xs text-ink-muted mt-3 text-center">Your information is private and HIPAA-secured.</div>
+              <div className="mt-6 flex justify-start">
+                <Turnstile siteKey="1x00000000000000000000AA" />
+              </div>
+              <button className="mt-6 bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-accent/90 transition-colors w-full sm:w-auto self-start">Submit</button>
             </form>
           </div>
         </div>
@@ -846,12 +851,11 @@ function FaqItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
 
 
 
-/* ---------- Contact ---------- */
-export function Contact() {
+/* ---------- Contact Info & Map ---------- */
+export function ContactInfo({ className = "section-pad" }: { className?: string }) {
   return (
-    <section id="contact" className="section-pad">
+    <section id="contact-info" className={className}>
       <div className="container-x">
-        {/* Top info cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
@@ -893,31 +897,35 @@ export function Contact() {
               <div className="min-w-0">
                 <h3 className="font-display font-semibold text-lg text-ink leading-snug">{c.t}</h3>
                 <div className="mt-1 text-ink-muted text-sm break-words">{c.l1}</div>
-                
               </div>
             </motion.a>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Map */}
-        <div className="mt-14">
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-card)] border border-border/60 min-h-[420px] lg:min-h-full"
-          >
-            <iframe
-              title="McKinney Dental and Implant Center — Map"
-              src="https://www.google.com/maps?q=McKinney+Dental+and+Implant+Center,3100+Ridge+Road,Ste+300,McKinney,TX+75070&ll=33.172678,-96.698463&z=17&output=embed"
-              className="h-full w-full min-h-[420px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </motion.div>
-        </div>
+export function ContactMap({ className = "section-pad" }: { className?: string }) {
+  return (
+    <section id="contact-map" className={className}>
+      <div className="container-x">
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-card)] border border-border/60 min-h-[420px] lg:min-h-full"
+        >
+          <iframe
+            title="McKinney Dental and Implant Center — Map"
+            src="https://www.google.com/maps?q=McKinney+Dental+and+Implant+Center,3100+Ridge+Road,Ste+300,McKinney,TX+75070&ll=33.172678,-96.698463&z=17&output=embed"
+            className="h-full w-full min-h-[420px]"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </motion.div>
       </div>
     </section>
   );
