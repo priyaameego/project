@@ -310,7 +310,7 @@ export function Implants() {
                   transition={{ delay: 0.4 }}
                   className="rounded-3xl bg-white/95 backdrop-blur-xl px-6 py-4 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] text-center pointer-events-auto border border-white/50"
                 >
-                  <img src="/logo.png" alt="McKinney Dental Center" className="h-10 sm:h-12 w-auto mx-auto mb-1.5" />
+                  <img src="https://mckinneyddscenter.com/wp-content/uploads/2026/06/MDIC-scaled.png" alt="McKinney Dental Center" className="h-10 sm:h-12 w-auto mx-auto mb-1.5" />
                   <div className="text-[10px] tracking-[0.25em] uppercase text-primary font-bold">
                     Implant Center
                   </div>

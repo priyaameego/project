@@ -3,24 +3,31 @@ import { useState, useRef } from "react";
 import { FiAward, FiCheckCircle, FiHeart, FiArrowUpRight, FiCamera } from "react-icons/fi";
 import { Link } from "@tanstack/react-router";
 import { CompareSlider } from "./CompareSlider";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import imgAfter from "@/assets/After.png";
-import img2 from "@/assets/2-600x252.jpg";
-
-// Use the imported images
+import imgAfterbe from "@/assets/afterbe.jpg";
+import imgMan from "@/assets/man.jpg";
 const IMAGES = [
   {
-    imageSrc: imgAfter,
+    imageSrc: imgAfterbe,
     label: "Smile Restoration",
     category: "Smile Design",
     treatment: "Porcelain Veneers · Whitening",
     duration: "6 weeks",
+    reverse: false,
   },
   {
-    imageSrc: img2,
+    imageSrc: "https://mckinneyddscenter.com/wp-content/uploads/2024/02/2-600x252.jpg",
     label: "Full Mouth Rehabilitation",
     category: "Implants",
     treatment: "Full Arch Implants",
     duration: "4 months",
+    reverse: true,
   },
   {
     imageSrc: "https://mckinneyddscenter.com/wp-content/uploads/2022/02/After-1024x683.jpg",
@@ -28,6 +35,7 @@ const IMAGES = [
     category: "Cosmetic",
     treatment: "Smile Makeover",
     duration: "Varies",
+    reverse: true,
   },
 ];
 
@@ -91,13 +99,51 @@ export function BeforeAfter() {
                 >
                   <CompareSlider 
                     imageSrc={img.imageSrc} 
-                    beforeSrc={img.beforeSrc} 
-                    afterSrc={img.afterSrc} 
+                    stitchedReverse={img.reverse}
                   />
                 </motion.article>
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Standard Image Carousel */}
+      <section className="relative bg-white pb-16 sm:pb-24">
+        <div className="container-x max-w-3xl mx-auto relative px-4 md:px-16">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            navigation={{
+              prevEl: ".standard-gallery-prev",
+              nextEl: ".standard-gallery-next",
+            }}
+            className="pb-12 rounded-[16px] overflow-hidden"
+          >
+            {[
+              imgMan,
+              "https://mckinneyddscenter.com/wp-content/uploads/2022/02/After-1024x683.jpg"
+            ].map((imgSrc, i) => (
+              <SwiperSlide key={i} className="pb-8">
+                <div className="aspect-[4/3] sm:aspect-[2/1] relative w-full overflow-hidden rounded-[16px] bg-gray-100">
+                  <img 
+                    src={imgSrc} 
+                    alt={`Patient Transformation ${i + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
+          <button className="standard-gallery-prev absolute left-0 top-[40%] -translate-y-1/2 z-10 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#1B4A8F] shadow-lg transition-transform hover:scale-105 hover:bg-[#f0f4f8] focus:outline-none">
+            <FiChevronLeft className="h-6 w-6" />
+          </button>
+          <button className="standard-gallery-next absolute right-0 top-[40%] -translate-y-1/2 z-10 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#1B4A8F] shadow-lg transition-transform hover:scale-105 hover:bg-[#f0f4f8] focus:outline-none">
+            <FiChevronRight className="h-6 w-6" />
+          </button>
         </div>
       </section>
 

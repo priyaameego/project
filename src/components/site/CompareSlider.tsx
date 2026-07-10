@@ -5,9 +5,10 @@ interface CompareSliderProps {
   imageSrc?: string; // For stitched images (backward compatibility)
   beforeSrc?: string; // For separate images
   afterSrc?: string; // For separate images
+  stitchedReverse?: boolean; // If true, stitched image is [After | Before]. Default false [Before | After].
 }
 
-export function CompareSlider({ imageSrc, beforeSrc, afterSrc }: CompareSliderProps) {
+export function CompareSlider({ imageSrc, beforeSrc, afterSrc, stitchedReverse = false }: CompareSliderProps) {
   const [position, setPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,7 +55,7 @@ export function CompareSlider({ imageSrc, beforeSrc, afterSrc }: CompareSliderPr
   return (
     <div 
       ref={containerRef}
-      className={`relative w-full overflow-hidden rounded-[12px] select-none touch-none bg-gray-100 ${isStitched ? 'aspect-[4/3] sm:aspect-[2.5/1]' : 'aspect-[4/3] sm:aspect-[1.5/1]'}`}
+      className={`relative w-full overflow-hidden rounded-[16px] select-none touch-none bg-gray-100 ${isStitched ? 'aspect-square sm:aspect-[4/3] lg:aspect-[1.5/1]' : 'aspect-[4/3] sm:aspect-[1.5/1]'}`}
       onPointerDown={handlePointerDown}
       style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
     >
@@ -63,12 +64,9 @@ export function CompareSlider({ imageSrc, beforeSrc, afterSrc }: CompareSliderPr
         <img 
           src={actualAfter} 
           alt="After" 
-          className={`absolute inset-0 h-full object-cover pointer-events-none ${isStitched ? 'w-[200%] max-w-[200%]' : 'w-full'}`}
-          style={isStitched ? { objectPosition: 'right center' } : {}}
+          className="absolute top-0 pointer-events-none h-full object-cover max-w-none"
+          style={isStitched ? { width: '200%', left: stitchedReverse ? '0' : '-100%' } : { width: '100%', left: '0' }}
         />
-        <div className="absolute bottom-3 right-3 text-white text-sm font-medium drop-shadow-md z-0 bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm">
-          After
-        </div>
       </div>
 
       {/* Before image - cropped with clip-path */}
@@ -79,12 +77,9 @@ export function CompareSlider({ imageSrc, beforeSrc, afterSrc }: CompareSliderPr
         <img 
           src={actualBefore} 
           alt="Before" 
-          className={`absolute inset-0 h-full object-cover pointer-events-none ${isStitched ? 'w-[200%] max-w-[200%]' : 'w-full'}`}
-          style={isStitched ? { objectPosition: 'left center' } : {}}
+          className="absolute top-0 pointer-events-none h-full object-cover max-w-none"
+          style={isStitched ? { width: '200%', left: stitchedReverse ? '-100%' : '0' } : { width: '100%', left: '0' }}
         />
-        <div className="absolute bottom-3 left-3 text-white text-sm font-medium drop-shadow-md bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm">
-          Before
-        </div>
       </div>
 
       {/* Slider Handle */}
@@ -96,6 +91,16 @@ export function CompareSlider({ imageSrc, beforeSrc, afterSrc }: CompareSliderPr
           <FiArrowLeft className="w-3 h-3 text-gray-700 -mr-0.5" />
           <FiArrowRight className="w-3 h-3 text-gray-700 -ml-0.5" />
         </div>
+      </div>
+
+      {/* Before / After Labels */}
+      <div className="absolute inset-0 pointer-events-none z-30 flex items-end justify-between p-4 sm:p-6">
+        <span className="text-white bg-black/30 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md shadow-sm transition-opacity duration-300" style={{ opacity: position > 15 ? 1 : 0 }}>
+          Before
+        </span>
+        <span className="text-white bg-black/30 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md shadow-sm transition-opacity duration-300" style={{ opacity: position < 85 ? 1 : 0 }}>
+          After
+        </span>
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import amanda from "@/assets/team-amanda.jpg"; // Keeping Amanda as she's Office Manager, not Andrea
-import saghar from "@/assets/team-saghar.jpg";
+import saghar from "@/assets/team-saghar-new.png";
 import implantScan from "@/assets/implant-scan.jpg";
 import implantResult from "@/assets/implant-result.jpg";
 import generalTech from "@/assets/general-care.jpg";
@@ -119,58 +122,82 @@ export function MeetTheTeamPage() {
         {/* Premium Technology Gallery Strip */}
         <div className="bg-slate-50">
           <div className="container-x">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 -mt-32 lg:-mt-44 relative z-20 px-4">
-              {[
-                { 
-                  src: implantResult, 
-                  alt: "Guided Implant Surgery",
-                  desc: "Precision & predictability"
-                },
-                { 
-                  src: implantScan, 
-                  alt: "CBCT 3D Scanning",
-                  desc: "Advanced diagnostics"
-                },
-                { 
-                  src: generalTech, 
-                  alt: "Digital Dentistry",
-                  desc: "State-of-the-art care"
-                },
-              ].map((img, i) => (
-                <motion.div
-                  key={img.src}
-                  initial={{ opacity: 0, y: 50 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative rounded-3xl overflow-hidden shadow-2xl bg-white cursor-pointer"
-                >
-                  
-                  <div className="relative aspect-[4/5] overflow-hidden">
-                    <img 
-                      src={img.src} 
-                      alt={img.alt} 
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/30 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-700" />
-                    
-                    {/* Inner border reveal */}
-                    <div className="absolute inset-4 border border-white/0 group-hover:border-white/20 rounded-2xl transition-colors duration-700 ease-in-out pointer-events-none" />
-                    
-                    {/* Hover text & accent reveal */}
-                    <div className="absolute bottom-8 left-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between">
-                      <div>
-                        <h4 className="text-white font-semibold text-lg">{img.alt}</h4>
-                        <p className="text-blue-200 text-sm">{img.desc}</p>
+            <div className="-mt-32 lg:-mt-44 relative z-20 px-4">
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                autoplay={{ delay: 3500, disableOnInteraction: false }}
+                loop
+                pagination={{ clickable: true }}
+                spaceBetween={30}
+                slidesPerView={1}
+                breakpoints={{
+                  640: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                }}
+                className="pb-16"
+              >
+                {[
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2022/01/Photo-9-min.jpg", 
+                    alt: "Our Practice",
+                    desc: "Modern Facility"
+                  },
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2022/01/Photo-11-min.jpg", 
+                    alt: "Dental Care",
+                    desc: "Comfortable Environment"
+                  },
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2023/11/OFFICE-PHOTO.jpg", 
+                    alt: "Office Interior",
+                    desc: "Welcoming Reception"
+                  },
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2021/10/rsw_1300h_800-2.webp", 
+                    alt: "State of the Art",
+                    desc: "Advanced Technology"
+                  },
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2022/01/Photo-19-min.jpg", 
+                    alt: "Consultation Room",
+                    desc: "Personalized Care"
+                  },
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2022/01/Photo-3-min.jpg", 
+                    alt: "Treatment Area",
+                    desc: "Pristine Environment"
+                  },
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2022/01/Photo-4-min.jpg", 
+                    alt: "Dental Suite",
+                    desc: "Relaxing Experience"
+                  },
+                  { 
+                    src: "https://mckinneyddscenter.com/wp-content/uploads/2022/01/Photo-5-min.jpg", 
+                    alt: "Patient Care",
+                    desc: "Dedicated Team"
+                  },
+                ].map((img, i) => (
+                  <SwiperSlide key={img.src + i}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 50 }} 
+                      whileInView={{ opacity: 1, y: 0 }} 
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                      className="group relative rounded-3xl overflow-hidden shadow-2xl bg-white cursor-pointer"
+                    >
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+                        <img 
+                          src={img.src} 
+                          alt={img.alt} 
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" 
+                        />
                       </div>
-                      <div className="h-10 w-10 shrink-0 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
-                        <FiArrowUpRight className="text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                    </motion.div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
             <div className="h-24 lg:h-32" />
           </div>

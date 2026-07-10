@@ -3,7 +3,7 @@ import { FiChevronDown, FiCheckCircle } from "react-icons/fi";
 import { PageHeader } from "@/components/site/PageHeader";
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import implantScan from "@/assets/implant-scan.jpg";
+import implantScan from "@/assets/x-guide-navigation.png";
 
 const ACCORDION_ITEMS = [
   {
@@ -145,14 +145,14 @@ export function ImplantsPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1 relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-20px_rgba(11,47,92,0.2)] aspect-[4/3] w-full"
+            className="order-2 lg:order-1 relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_-20px_rgba(11,47,92,0.2)] aspect-[4/3] w-full bg-white"
           >
             <img 
               src={implantScan} 
               alt="Advanced 3D X-Guide Navigation System" 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-1000 hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 to-transparent pointer-events-none" />
           </motion.div>
 
           <motion.div 

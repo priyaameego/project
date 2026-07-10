@@ -96,7 +96,7 @@ export function GeneralDentistryPage() {
       {/* CTA */}
       <section className="bg-gradient-to-br from-[#0F4C81] via-[#1B4A8F] to-[#0B2545] text-white py-20">
         <div className="container-x text-center max-w-3xl mx-auto">
-          <h2 className="font-display text-4xl sm:text-5xl font-semibold leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold leading-tight text-white">
             Ready for your healthiest smile yet?
           </h2>
           <p className="mt-5 text-white/80">

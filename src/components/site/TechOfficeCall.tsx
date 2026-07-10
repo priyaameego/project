@@ -87,7 +87,7 @@ export function TechOfficeCall() {
                 <div className="relative">
                   <div className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-[#EAF7FA] to-transparent blur-2xl" />
                   <img
-                    src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80"
+                    src="https://www.sakraworldhospital.com/assets/spl_splimgs/digital-dentistry.webp"
                     alt="Digital dentistry with intra-oral scanning"
                     className="w-full rounded-2xl shadow-[0_20px_50px_-20px_rgba(15,76,129,0.35)] object-cover aspect-[4/3]"
                   />
@@ -152,7 +152,7 @@ export function TechOfficeCall() {
                 <div className="relative">
                   <div className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-[#EAF7FA] to-transparent blur-2xl" />
                   <img
-                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"
+                    src="https://mckinneyddscenter.com/wp-content/uploads/2024/01/255A4063.bak-Medium.jpg"
                     alt="Modern dental office interior"
                     className="w-full rounded-2xl shadow-[0_20px_50px_-20px_rgba(15,76,129,0.35)] object-cover aspect-[4/3]"
                   />

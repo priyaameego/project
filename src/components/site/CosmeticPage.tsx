@@ -15,9 +15,10 @@ import {
   FiClock,
 } from "react-icons/fi";
 import cosmeticHero from "@/assets/cosmetic-hero.jpg";
-import veneersImg from "@/assets/cosmetic-veneers.jpg";
-import crownImg from "@/assets/cosmetic-crown.jpg";
-import makeoverImg from "@/assets/cosmetic-makeover.jpg";
+import veneersImg from "@/assets/proc.png";
+import crownImg from "@/assets/images.jpg";
+import makeoverImg from "@/assets/smile-makeover.jpg";
+import whiteningImg from "@/assets/proffesiona.jpg";
 
 const TREATMENTS = [
   {
@@ -101,7 +102,7 @@ export function CosmeticPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="mt-6 font-display text-5xl sm:text-6xl lg:text-[72px] font-semibold leading-[1.02]"
+                className="mt-6 font-display text-5xl sm:text-6xl lg:text-[72px] font-semibold leading-[1.02] text-white"
               >
                 The Art of a{" "}
                 <span className="italic font-serif text-[#E9C77B]">Flawless</span>
@@ -161,7 +162,7 @@ export function CosmeticPage() {
               className="lg:col-span-5 relative"
             >
               <div className="relative rounded-[32px] overflow-hidden shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] border border-white/10 group">
-                <img src={cosmeticHero} alt="Radiant cosmetic dentistry smile" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
+                <img src="https://dentakademiglobal.com/wp-content/uploads/2024/12/smile-design.webp" alt="Radiant cosmetic dentistry smile" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 via-[#0B2F5C]/10 to-transparent" />
               </div>
               <motion.div
@@ -326,7 +327,7 @@ export function CosmeticPage() {
               className="relative rounded-[22px] overflow-hidden shadow-[0_22px_55px_-28px_rgba(11,47,92,0.4)]"
             >
               <img
-                src={makeoverImg}
+                src={whiteningImg}
                 alt="Professional teeth whitening treatment"
                 className="w-full h-[380px] object-cover"
               />
@@ -350,58 +351,6 @@ export function CosmeticPage() {
               <text x="130" y="58" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="32" fontWeight="900" fill="#0B2F5C" letterSpacing="1">z<tspan fill="#E9C77B">o</tspan><tspan fill="#0B2F5C">om</tspan></text>
             </svg>
           </motion.div>
-        </div>
-      </section>
-
-      {/* BEFORE & AFTER */}
-      <section className="bg-gradient-to-b from-white to-[#F4F8FB] py-20">
-        <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#EAF6F9] text-[#0B2F5C] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase">
-              Real Transformations
-            </span>
-            <h2 className="mt-5 font-display text-4xl sm:text-5xl font-semibold text-[#0B2F5C] leading-tight">
-              Smiles we've{" "}
-              <span className="italic font-serif text-[#1B4A8F]">redesigned</span>.
-            </h2>
-            <p className="mt-4 text-[15px] text-[#5A6B82]">
-              Genuine before-and-after results from our McKinney studio.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[veneersImg, crownImg, makeoverImg].map((src, i) => (
-              <motion.div
-                key={src}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="group relative overflow-hidden rounded-[20px] bg-white border border-[#E5ECF3] shadow-[0_22px_55px_-28px_rgba(11,47,92,0.4)]"
-              >
-                <img
-                  src={src}
-                  alt={`Cosmetic transformation ${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-auto object-cover transition-transform duration-[800ms] group-hover:scale-[1.05]"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B2F5C]/85 to-transparent p-5 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="text-white font-semibold">Smile Makeover #{i + 1}</div>
-                  <div className="text-white/75 text-[12px]">Veneers · Whitening</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-[#0B2F5C] border border-[#0B2F5C]/20 hover:border-[#2EB6CC] hover:text-[#2EB6CC] transition-colors"
-            >
-              View Full Smile Gallery <FiArrowUpRight />
-            </Link>
-          </div>
         </div>
       </section>
 

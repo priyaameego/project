@@ -64,7 +64,7 @@ function PaymentPlansPage() {
             className="mt-20 rounded-3xl p-8 sm:p-12 text-center text-white"
             style={{ background: `linear-gradient(120deg, ${INK} 0%, ${ACCENT} 100%)` }}
           >
-            <h3 className="font-display text-2xl sm:text-3xl font-semibold">
+            <h3 className="font-display text-2xl sm:text-3xl font-semibold text-white">
               Have questions about financing?
             </h3>
             <p className="mt-3 text-white/80 max-w-xl mx-auto">

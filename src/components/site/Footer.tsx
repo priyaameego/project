@@ -35,7 +35,7 @@ export function Footer() {
             >
               <Link to="/" className="inline-block">
                 <img 
-                  src="/logo.png" 
+                  src="https://mckinneyddscenter.com/wp-content/uploads/2026/06/MDIC-scaled.png" 
                   alt="McKinney Dental Center" 
                   className="h-14 w-auto brightness-0 invert opacity-90" 
                 />

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiExternalLink, FiShield, FiLock } from "react-icons/fi";
-const LOGO_SRC = "/logo.png";
+const LOGO_SRC = "https://mckinneyddscenter.com/wp-content/uploads/2026/06/MDIC-scaled.png";
 
 export function PatientForms() {
   return (

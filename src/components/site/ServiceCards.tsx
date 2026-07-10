@@ -3,16 +3,15 @@ import { Link } from "@tanstack/react-router";
 import { GiDiamonds, GiMagicSwirl } from "react-icons/gi";
 import { FaTooth } from "react-icons/fa";
 import { FiArrowRight, FiShield } from "react-icons/fi";
-import orthoImg from "@/assets/ortho-smile.jpg";
-import implantImg from "@/assets/implant-hero.jpg";
-import generalImg from "@/assets/general-care.jpg";
-import cosmeticImg from "@/assets/cosmetic-veneers.jpg";
+import orthoImg from "@/assets/orthodonticsjpg.jpg";
+import generalImg from "@/assets/general-dentistry.jpg";
+import cosmeticImg from "@/assets/Cosmetic-Dentistry.jpg";
 
 const CARDS = [
   {
     title: "Dental Implants",
     subtitle: "Permanent tooth replacement",
-    img: implantImg,
+    img: "https://elshenawy-dentalclinics.com/wp-content/uploads/2025/01/Croasdaile-Dental-Arts-dental-implants.webp",
     icon: <FaTooth />,
     to: "/implants",
   },

@@ -12,7 +12,7 @@ import {
   FiMapPin,
   FiClock,
 } from "react-icons/fi";
-const LOGO_SRC = "/logo.png";
+const LOGO_SRC = "https://mckinneyddscenter.com/wp-content/uploads/2026/06/MDIC-scaled.png";
 
 type Item = { label: string; to: string; children?: { label: string; to: string; desc?: string }[] };
 
@@ -85,7 +85,7 @@ export function Navbar() {
     <>
       {/* Utility bar — animated gradient */}
       <div
-        className="hidden lg:block text-white text-[12.5px] tracking-wide relative overflow-hidden"
+        className="text-white text-[11px] sm:text-[12.5px] tracking-wide relative overflow-hidden"
         style={{
           background: `linear-gradient(110deg, ${INK} 0%, #103E48 45%, ${ACCENT} 100%)`,
         }}
@@ -100,25 +100,25 @@ export function Navbar() {
           animate={{ x: ["-30%", "130%"] }}
           transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
         />
-        <div className="container-x flex items-center justify-between h-9 relative">
-          <div className="flex items-center gap-6">
-            <span className="inline-flex items-center gap-2">
-              <FiMapPin style={{ color: GOLD }} />
+        <div className="container-x flex flex-col lg:flex-row items-center justify-between py-2 lg:py-0 lg:h-9 relative gap-2 lg:gap-0">
+          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-6 text-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=3100+Ridge+Road,+Ste+300,+McKinney,+TX+75070" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+              <FiMapPin style={{ color: GOLD }} className="shrink-0" />
               3100 Ridge Road, Ste 300, McKinney, TX 75070
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <FiClock style={{ color: GOLD }} />
+            </a>
+            <span className="inline-flex items-center gap-1.5">
+              <FiClock style={{ color: GOLD }} className="shrink-0" />
               Mon–Fri 8:00 — 6:00 · Sat 9:00 — 2:00
             </span>
           </div>
-          <div className="flex items-center gap-5">
-            <a href="tel:+19728336825" className="inline-flex items-center gap-2 hover:text-[color:var(--gold)] transition-colors" style={{ ['--gold' as never]: GOLD } as React.CSSProperties}>
-              <FiPhone style={{ color: GOLD }} /> (972) 833-6825
+          <div className="flex items-center gap-4 sm:gap-5">
+            <a href="tel:+19728336825" className="inline-flex items-center gap-1.5 hover:text-[color:var(--gold)] transition-colors" style={{ ['--gold' as never]: GOLD } as React.CSSProperties}>
+              <FiPhone style={{ color: GOLD }} className="shrink-0" /> <span className="hidden sm:inline">(972) 833-6825</span><span className="sm:hidden">Call Us</span>
             </a>
-            <a href="mailto:info@mckinneyddscenter.com" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-              <FiMail style={{ color: GOLD }} /> info@mckinneyddscenter.com
+            <a href="mailto:info@mckinneyddscenter.com" className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+              <FiMail style={{ color: GOLD }} className="shrink-0" /> <span className="hidden sm:inline">info@mckinneyddscenter.com</span><span className="sm:hidden">Email Us</span>
             </a>
-            <span className="flex items-center gap-2 pl-4 border-l border-white/20">
+            <span className="flex items-center gap-2 pl-3 sm:pl-4 border-l border-white/20">
               <a href="#" aria-label="Instagram" className="hover:opacity-80 transition-opacity" style={{ color: GOLD }}><FiInstagram /></a>
               <a href="#" aria-label="Facebook" className="hover:opacity-80 transition-opacity" style={{ color: GOLD }}><FiFacebook /></a>
             </span>

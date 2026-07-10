@@ -20,7 +20,7 @@ import g3Asset from "@/assets/gallery-3.png.asset.json";
 const g1 = g1Asset.url;
 const g2 = g2Asset.url;
 const g3 = g3Asset.url;
-import HERO_IMG from "@/assets/ortho-hero.jpg";
+import HERO_IMG from "@/assets/craft.png";
 import ALIGNER_IMG from "@/assets/ortho-aligner.jpg";
 import CONSULT_IMG from "@/assets/ortho-consult.jpg";
 import SMILE_IMG from "@/assets/ortho-smile.jpg";
@@ -35,11 +35,11 @@ const BENEFITS = [
 ];
 
 const STEPS = [
-  { n: "01", title: "Smile Consultation", desc: "Complimentary exam, digital records and a customized treatment discussion." },
-  { n: "02", title: "3D iTero Scan", desc: "Quick, radiation-free digital impressions — no messy molds." },
-  { n: "03", title: "Custom Aligner Plan", desc: "Your aligners are precision-crafted from our doctor-designed treatment plan." },
-  { n: "04", title: "Wear & Progress Checks", desc: "Switch trays every 1–2 weeks. Short check-ins every 6–8 weeks." },
-  { n: "05", title: "Reveal & Retain", desc: "Reveal your new smile, then protect it with custom retainers." },
+  { n: "01", title: "McKinney Dental Consultation", desc: "Meet with Dr. Juma for a complimentary exam and customized treatment discussion at our McKinney office." },
+  { n: "02", title: "3D Digital Scanning", desc: "We use advanced 3D scanning technology at McKinney Dental to take quick, comfortable digital impressions—no messy molds." },
+  { n: "03", title: "Dr. Juma's Custom Plan", desc: "Dr. Juma personally designs your treatment plan to ensure your aligners are precision-crafted for your smile." },
+  { n: "04", title: "Progress Checks in McKinney", desc: "Switch your clear aligners every 1–2 weeks and visit us every 6–8 weeks for short, convenient progress checks." },
+  { n: "05", title: "Reveal Your New Smile", desc: "Celebrate your new smile with the McKinney Dental team, then protect it with custom retainers." },
 ];
 
 const RESULTS = [
@@ -194,23 +194,6 @@ export function OrthodonticsPage() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -bottom-8 -right-4 sm:-right-8 bg-white border border-[#E5ECF3] rounded-[2rem] p-6 shadow-xl max-w-[260px]"
-              >
-                <div className="flex gap-4 items-center">
-                  <div className="h-14 w-14 shrink-0 rounded-2xl bg-gradient-to-br from-[#1B4A8F] to-[#0B2F5C] text-white flex items-center justify-center">
-                    <FiAward size={24} />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-[#0B2F5C] leading-tight">Invisalign Platinum<br/>Provider</div>
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
 
             <motion.div 
@@ -313,7 +296,7 @@ export function OrthodonticsPage() {
                 From your first scan to the final reveal — every step is digital, predictable, and guided directly by Dr. Juma.
               </p>
               <div className="mt-10 rounded-[2rem] overflow-hidden border border-[#E5ECF3] shadow-[0_20px_50px_-20px_rgba(11,47,92,0.15)]">
-                <img src={CONSULT_IMG} alt="Doctor consultation" className="w-full h-72 object-cover" />
+                <img src="https://www.ccsmileswa.com/assets/images/clear-aligners-1.jpg" alt="Clear aligners treatment" className="w-full h-72 object-cover" />
               </div>
             </div>
 
