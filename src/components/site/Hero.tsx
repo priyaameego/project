@@ -1,28 +1,24 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import implantImg from "@/assets/dental-implant-motion.png";
+import dentVideo from "@/assets/dent.mp4";
 
 export function Hero() {
-  const x = useMotionValue(0.5);
-  const y = useMotionValue(0.5);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  // The number of seconds to cut from the beginning of the video
+  const START_TIME = 2; 
 
-  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 25 });
-  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 25 });
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = START_TIME;
+    }
+  }, []);
 
-  // Base rotation is ~25 deg on X axis for that 3D tilt
-  const rotateX = useTransform(mouseYSpring, [0, 1], [40, 10]);
-  const rotateY = useTransform(mouseXSpring, [0, 1], [-25, 25]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    x.set((e.clientX - rect.left) / rect.width);
-    y.set((e.clientY - rect.top) / rect.height);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0.5);
-    y.set(0.5);
+  const handleVideoEnded = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = START_TIME;
+      videoRef.current.play();
+    }
   };
 
   return (
@@ -50,40 +46,33 @@ export function Hero() {
       {/* Main container matching the screenshot layout */}
       <div className="container-x relative z-10 w-full max-w-[1400px] mx-auto px-6 h-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-0 mt-8 lg:mt-0">
         
-        {/* Left side - 3D Animation Video acting like the 3D render in the screenshot */}
+        {/* Left side - Video */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="w-full lg:w-1/2 flex justify-center lg:justify-end relative z-0 lg:pr-10"
         >
-          {/* Subtle animated glow behind the implant */}
+          {/* Subtle animated glow behind the video */}
           <motion.div 
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 bg-white/40 rounded-full blur-[80px]"
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
           <div 
-            className="relative w-[85%] max-w-[320px] sm:max-w-[400px] lg:max-w-[600px] lg:w-full aspect-square mix-blend-multiply cursor-pointer"
-            style={{ perspective: 1200 }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            className="relative w-[85%] max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] mx-auto cursor-pointer"
           >
-            <motion.img 
-              src={implantImg} 
-              alt="Dental Implants"
-              className="w-full h-full object-cover sm:object-contain relative z-10"
+            <video 
+              ref={videoRef}
+              src={dentVideo} 
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleVideoEnded}
+              className="w-full h-auto relative z-10 rounded-[20px]"
               style={{ 
-                maskImage: 'radial-gradient(circle, black 45%, transparent 70%)', 
-                WebkitMaskImage: 'radial-gradient(circle, black 45%, transparent 70%)',
-                rotateX,
-                rotateY
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
               }}
-              animate={{ 
-                y: [0, -15, 0],
-                scale: [1, 1.02, 1]
-              }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             />
           </div>
         </motion.div>
@@ -121,3 +110,4 @@ export function Hero() {
     </section>
   );
 }
+
