@@ -1,8 +1,30 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React from "react";
 import { Link } from "@tanstack/react-router";
 import implantImg from "@/assets/dental-implant-motion.png";
 
 export function Hero() {
+  const x = useMotionValue(0.5);
+  const y = useMotionValue(0.5);
+
+  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 25 });
+  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 25 });
+
+  // Base rotation is ~25 deg on X axis for that 3D tilt
+  const rotateX = useTransform(mouseYSpring, [0, 1], [40, 10]);
+  const rotateY = useTransform(mouseXSpring, [0, 1], [-25, 25]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set((e.clientX - rect.left) / rect.width);
+    y.set((e.clientY - rect.top) / rect.height);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0.5);
+    y.set(0.5);
+  };
+
   return (
     <section className="relative min-h-[100svh] lg:min-h-[75vh] lg:h-[75vh] w-full flex items-center overflow-hidden bg-[#fafafa] pt-28 pb-12 lg:py-0">
       <style>
@@ -41,19 +63,27 @@ export function Hero() {
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
-          <div className="relative w-[85%] max-w-[320px] sm:max-w-[400px] lg:max-w-[600px] lg:w-full aspect-square mix-blend-multiply">
+          <div 
+            className="relative w-[85%] max-w-[320px] sm:max-w-[400px] lg:max-w-[600px] lg:w-full aspect-square mix-blend-multiply cursor-pointer"
+            style={{ perspective: 1200 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
             <motion.img 
               src={implantImg} 
               alt="Dental Implants"
               className="w-full h-full object-cover sm:object-contain relative z-10"
-              style={{ maskImage: 'radial-gradient(circle, black 45%, transparent 70%)', WebkitMaskImage: 'radial-gradient(circle, black 45%, transparent 70%)' }}
-              animate={{ 
-                scale: [1, 1.05, 1],
-                y: [0, -15, 0],
-                rotateX: [0, 15, -15, 0],
-                rotateY: [0, 25, -25, 0]
+              style={{ 
+                maskImage: 'radial-gradient(circle, black 45%, transparent 70%)', 
+                WebkitMaskImage: 'radial-gradient(circle, black 45%, transparent 70%)',
+                rotateX,
+                rotateY
               }}
-              transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+              animate={{ 
+                y: [0, -15, 0],
+                scale: [1, 1.02, 1]
+              }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             />
           </div>
         </motion.div>
