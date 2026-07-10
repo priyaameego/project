@@ -15,10 +15,6 @@ export const Route = createFileRoute("/services")({
     <>
       <PageHeader title="Our Services" subtitle="Preventive, restorative and cosmetic dentistry under one roof." />
       <Services />
-      <Implants />
-      <Cosmetic />
-      <Orthodontics />
-      <Digital />
     </>
   ),
 });

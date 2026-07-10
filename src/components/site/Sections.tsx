@@ -217,21 +217,13 @@ export function Services() {
                 to={s.to}
                 className="group flex flex-col h-full relative overflow-hidden rounded-[2rem] bg-white shadow-[0_20px_50px_-25px_rgba(11,37,69,0.2)] hover:shadow-[0_40px_80px_-25px_rgba(15,76,129,0.3)] border border-border/40 transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="relative h-48 sm:h-56 overflow-hidden">
-                  <img src={s.img} alt={s.title} className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                  
-                  <div className="absolute top-4 left-4 grid h-11 w-11 place-items-center rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white text-xl shadow-lg">
+                <div className="p-6 sm:p-8 flex flex-col flex-1 bg-white">
+                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-blue-50 text-blue-600 text-2xl mb-6 shadow-sm">
                     {s.icon}
                   </div>
-                  
-                  <div className="absolute bottom-4 left-5 right-5">
-                    <h3 className="font-display font-semibold text-xl text-white tracking-wide">{s.title}</h3>
-                  </div>
-                </div>
-                <div className="p-5 sm:p-6 flex flex-col flex-1 bg-white">
-                  <p className="text-[14.5px] text-ink-muted leading-relaxed flex-1">{s.desc}</p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-primary group-hover:gap-3 transition-all">
+                  <h3 className="font-display font-semibold text-[22px] text-[#0B2F5C] mb-3 tracking-tight">{s.title}</h3>
+                  <p className="text-[15px] text-[#6B7C95] leading-relaxed flex-1">{s.desc}</p>
+                  <div className="mt-8 inline-flex items-center gap-2 text-[14px] font-semibold text-blue-600 group-hover:gap-3 transition-all">
                     Learn More <FiArrowRight />
                   </div>
                 </div>

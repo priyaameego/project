@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import implantScan from "@/assets/x-guide-navigation.png";
 import dentalImplantHero from "@/assets/dental_implant_hero.png";
+import implantsWebp from "@/assets/implants.webp";
 
 const ACCORDION_ITEMS = [
   {
@@ -137,23 +138,9 @@ export function ImplantsPage() {
               className="lg:col-span-5 relative"
             >
               <div className="relative rounded-[32px] overflow-hidden shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] border border-white/10 group">
-                <img src={dentalImplantHero} alt="Precision Dental Implant" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
+                <img src={implantsWebp} alt="Precision Dental Implant" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 via-[#0B2F5C]/10 to-transparent" />
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-[24px] p-6 shadow-[0_20px_50px_-20px_rgba(11,47,92,0.4)] max-w-[250px] hidden sm:block border border-[#E5ECF3]"
-              >
-                <div className="flex items-center gap-1 text-[#E9C77B] mb-3">
-                  {[...Array(5)].map((_, i) => <FiStar key={i} className="fill-current" />)}
-                </div>
-                <p className="text-[13.5px] text-[#5A6B82] leading-relaxed font-light">
-                  "I can eat anything again and my smile looks perfect. Dr. Juma's precision is unmatched."
-                </p>
-                <div className="text-[12.5px] font-semibold text-[#0B2F5C] mt-3">— Robert D., McKinney</div>
-              </motion.div>
             </motion.div>
           </div>
         </div>

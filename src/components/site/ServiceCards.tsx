@@ -12,7 +12,7 @@ const CARDS = [
   {
     title: "Dental Implants",
     subtitle: "Permanent tooth replacement",
-    img: implantImg,
+    img: "https://www.perio.org/wp-content/uploads/2020/02/dental-implant.png",
     icon: <FaTooth />,
     to: "/implants",
   },
