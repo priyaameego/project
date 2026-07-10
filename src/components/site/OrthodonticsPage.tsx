@@ -109,15 +109,17 @@ export function OrthodonticsPage() {
               transition={{ duration: 0.55, delay: 0.15 }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
-              <Link
-                to="/contact"
+              <a
+                href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full pl-6 pr-2 py-2.5 text-sm font-semibold text-[#0B2F5C] bg-gradient-to-r from-[#E9C77B] to-[#F3D88F] hover:shadow-[0_18px_40px_-18px_rgba(233,199,123,0.7)] transition-shadow"
               >
                 Book Free Consultation
                 <span className="grid h-9 w-9 place-items-center rounded-full bg-[#0B2F5C] text-white group-hover:rotate-45 transition-transform">
                   <FiArrowUpRight />
                 </span>
-              </Link>
+              </a>
               <a
                 href="tel:+19728336825"
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white border border-white/30 hover:border-[#E9C77B] hover:text-[#E9C77B] transition-colors"
@@ -358,12 +360,14 @@ export function OrthodonticsPage() {
                 Join the thousands of patients who have achieved their dream smiles with Dr. Juma. Let’s map out a customized treatment plan that works for your goals and lifestyle.
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-[15px] tracking-wide font-semibold text-[#0B2F5C] bg-white hover:bg-[#F3D88F] hover:shadow-[0_15px_30px_-10px_rgba(233,199,123,0.4)] transition-all duration-300"
+                <a
+                  href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-[15px] tracking-wide font-semibold text-[#0B2F5C] bg-white hover:bg-[#F3D88F] hover:shadow-[0_15px_30px_-10px_rgba(233,199,123,0.4)] transition-all duration-300 inline-block"
                 >
                   Book My Consultation
-                </Link>
+                </a>
                 <a
                   href="tel:+19728336825"
                   className="inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-[15px] tracking-wide font-semibold text-white border-2 border-white/30 hover:border-white transition-all duration-300"

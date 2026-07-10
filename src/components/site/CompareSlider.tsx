@@ -9,7 +9,7 @@ interface CompareSliderProps {
 }
 
 export function CompareSlider({ imageSrc, beforeSrc, afterSrc, stitchedReverse = false }: CompareSliderProps) {
-  const [position, setPosition] = useState(50);
+  const [position, setPosition] = useState(95);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 

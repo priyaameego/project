@@ -50,7 +50,8 @@ export function Hero() {
               animate={{ 
                 scale: [1, 1.05, 1],
                 y: [0, -15, 0],
-                rotate: [0, 2, -2, 0]
+                rotateX: [0, 15, -15, 0],
+                rotateY: [0, 25, -25, 0]
               }}
               transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
             />
@@ -76,12 +77,14 @@ export function Hero() {
             <span className="font-medium text-[#111]">Dental implants can restore:</span> natural aesthetics & natural function
           </p>
           
-          <Link
-            to="/contact"
-            className="bg-[#1B4A8F] hover:bg-[#113264] text-white px-10 py-4 font-serif text-[13px] tracking-[0.15em] uppercase shadow-lg hover:shadow-xl rounded-sm transition-colors duration-300"
+          <a
+            href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#1B4A8F] hover:bg-[#113264] text-white px-10 py-4 font-serif text-[13px] tracking-[0.15em] uppercase shadow-lg hover:shadow-xl rounded-sm transition-colors duration-300 inline-block"
           >
             Book A Consultation
-          </Link>
+          </a>
         </motion.div>
 
       </div>

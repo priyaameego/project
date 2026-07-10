@@ -4,7 +4,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import amanda from "@/assets/team-amanda.jpg"; // Keeping Amanda as she's Office Manager, not Andrea
-import saghar from "@/assets/team-saghar-new.png";
+
 import implantScan from "@/assets/implant-scan.jpg";
 import implantResult from "@/assets/implant-result.jpg";
 import generalTech from "@/assets/general-care.jpg";
@@ -12,7 +12,7 @@ import generalTech from "@/assets/general-care.jpg";
 // Note: Removed Dr. He and Andrea as requested.
 const TEAM = [
   { img: "https://mckinneyddscenter.com/wp-content/uploads/2023/11/AMANDA-PORTRAIT.jpg", name: "Amanda", role: "Office Manager" },
-  { img: saghar, name: "Saghar", role: "Hygienist" },
+  { img: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", name: "Saghar", role: "Hygienist" },
 ];
 
 export function MeetTheTeamPage() {

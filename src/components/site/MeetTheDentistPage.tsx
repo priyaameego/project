@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiStar, FiArrowUpRight, FiHeart, FiUsers, FiBookOpen, FiActivity } from "react-icons/fi";
-import implantTech from "@/assets/implant-tech.jpg";
+import imp from "@/assets/imp.png";
 import { CommunityService } from "@/components/site/CommunityService";
 import { CommunitySlider } from "@/components/site/CommunitySlider";
 
@@ -151,10 +151,12 @@ export function MeetTheDentistPage() {
               <div className="hidden md:block absolute -left-12 top-0 bottom-0 w-24 bg-slate-900 -skew-x-[15deg] z-10" />
               
               <div className="absolute inset-0 bg-slate-900/20 mix-blend-multiply z-10 group-hover:bg-transparent transition-colors duration-700" />
-              <img 
-                src={implantTech} 
+              <motion.img 
+                src={imp} 
                 alt="Implant Dentistry Technology" 
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out" 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110" 
               />
             </div>
           </motion.div>

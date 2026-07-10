@@ -6,12 +6,13 @@ import { FiArrowRight, FiShield } from "react-icons/fi";
 import orthoImg from "@/assets/orthodonticsjpg.jpg";
 import generalImg from "@/assets/general-dentistry.jpg";
 import cosmeticImg from "@/assets/Cosmetic-Dentistry.jpg";
+import implantImg from "@/assets/implant-hero.jpg";
 
 const CARDS = [
   {
     title: "Dental Implants",
     subtitle: "Permanent tooth replacement",
-    img: "https://elshenawy-dentalclinics.com/wp-content/uploads/2025/01/Croasdaile-Dental-Arts-dental-implants.webp",
+    img: implantImg,
     icon: <FaTooth />,
     to: "/implants",
   },

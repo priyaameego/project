@@ -54,13 +54,15 @@ export function ScheduleAppointment() {
             </p>
 
             <div className="mt-8 sm:mt-10 flex justify-center">
-              <Link
-                to="/patient-checkin"
+              <a
+                href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center px-8 sm:px-12 py-3 sm:py-4 rounded-xl text-white text-sm sm:text-base font-semibold bg-[#2EB6CC] hover:bg-[#26a3b8] transition-all duration-300 shadow-[0_0_30px_rgba(46,182,204,0.5)] hover:shadow-[0_0_45px_rgba(46,182,204,0.75)] hover:-translate-y-0.5"
               >
                 <span className="relative z-10">Book Appointment</span>
                 <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-700" />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

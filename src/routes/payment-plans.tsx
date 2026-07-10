@@ -40,10 +40,10 @@ function PaymentPlansPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 flex justify-center"
+            className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12"
           >
             <a
-              href="https://go.carecredit.com/consumer/home?sitecode=CCCAPDS7X"
+              href="https://www.carecredit.com/go/788TMB/?dtc=DS1X&sitecode=CCQRCDS1X"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block transition-transform hover:scale-105"
@@ -54,6 +54,15 @@ function PaymentPlansPage() {
                 className="max-w-full h-auto rounded-xl shadow-lg"
               />
             </a>
+
+            <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-[0_10px_30px_rgba(11,42,51,0.08)] border border-[#E5ECF3]">
+              <p className="font-semibold text-[#0B2A33] mb-3 text-center">Scan to Apply or Pay</p>
+              <img 
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://www.carecredit.com/go/788TMB/?dtc=DS1X&sitecode=CCQRCDS1X")}`}
+                alt="CareCredit QR Code"
+                className="w-[150px] h-[150px]"
+              />
+            </div>
           </motion.div>
 
           <motion.div

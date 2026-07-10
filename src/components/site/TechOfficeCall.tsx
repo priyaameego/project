@@ -201,59 +201,17 @@ export function TechOfficeCall() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+                className="flex flex-col items-center justify-center text-center py-10"
               >
-                <div className="relative overflow-hidden rounded-3xl p-10 sm:p-14 text-white shadow-[0_25px_55px_-25px_rgba(46,107,230,0.6)]"
-                  style={{ background: "linear-gradient(135deg, #2E6BE6 0%, #1E4FB8 100%)" }}
+                <div className="grid h-16 w-16 sm:h-20 sm:w-20 place-items-center rounded-xl bg-[#2E6BE6] text-white shadow-lg mb-8">
+                  <FiPhone size={28} className="sm:scale-125" />
+                </div>
+                <a
+                  href="tel:+19728336825"
+                  className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#333] hover:text-[#2E6BE6] transition-colors"
                 >
-                  <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
-                  <FiPhone size={40} className="mb-6 opacity-90" />
-                  <p className="text-sm uppercase tracking-[0.2em] opacity-80">Call us today</p>
-                  <a
-                    href="tel:+19728336825"
-                    className="mt-3 block font-display text-4xl sm:text-5xl font-semibold tracking-tight hover:opacity-90"
-                  >
-                    (972) 833-6825
-                  </a>
-                  <p className="mt-6 text-white/80 max-w-sm leading-relaxed">
-                    Speak with our team for appointments, second opinions, or to learn more about implants
-                    and Invisalign.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-display text-3xl sm:text-4xl font-semibold text-[#1f2937] mb-6">
-                    We're here whenever you need us
-                  </h3>
-                  <ul className="space-y-5">
-                    <li className="flex items-start gap-4">
-                      <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#EAF7FA] text-[#2E6BE6]">
-                        <FiClock />
-                      </span>
-                      <div>
-                        <p className="font-semibold text-slate-800">Office Hours</p>
-                        <p className="text-sm text-slate-500">Mon – Fri · 8:00 AM – 5:00 PM</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#EAF7FA] text-[#2E6BE6]">
-                        <FiMail />
-                      </span>
-                      <div>
-                        <p className="font-semibold text-slate-800">Email</p>
-                        <p className="text-sm text-slate-500">info@mckinneyddscenter.com</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#EAF7FA] text-[#2E6BE6]">
-                        <FiCpu />
-                      </span>
-                      <div>
-                        <p className="font-semibold text-slate-800">Emergency Support</p>
-                        <p className="text-sm text-slate-500">24/7 patient support line</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  Call Us Now: (972) 833-6825
+                </a>
               </motion.div>
             )}
           </AnimatePresence>

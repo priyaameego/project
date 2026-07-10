@@ -124,15 +124,17 @@ export function CosmeticPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="mt-9 flex flex-wrap gap-3"
               >
-                <Link
-                  to="/contact"
+                <a
+                  href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full pl-6 pr-2 py-2.5 text-sm font-semibold text-[#0B2F5C] bg-[#E9C77B] hover:bg-white transition-colors"
                 >
                   Book Smile Consultation
                   <span className="grid h-9 w-9 place-items-center rounded-full bg-[#0B2F5C] text-white group-hover:rotate-45 transition-transform">
                     <FiArrowUpRight />
                   </span>
-                </Link>
+                </a>
                 <a
                   href="tel:+19728336825"
                   className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white border border-white/30 hover:border-[#E9C77B] hover:text-[#E9C77B] transition-colors"
@@ -444,15 +446,17 @@ export function CosmeticPage() {
                 </div>
               </div>
               <div className="flex flex-wrap lg:justify-end gap-3">
-                <Link
-                  to="/contact"
+                <a
+                  href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full pl-6 pr-2 py-2.5 text-sm font-semibold text-[#0B2F5C] bg-[#E9C77B] hover:bg-white transition-colors"
                 >
                   Book Consultation
                   <span className="grid h-9 w-9 place-items-center rounded-full bg-[#0B2F5C] text-white group-hover:rotate-45 transition-transform">
                     <FiArrowUpRight />
                   </span>
-                </Link>
+                </a>
                 <a
                   href="tel:+19728336825"
                   className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white border border-white/30 hover:border-[#E9C77B] hover:text-[#E9C77B] transition-colors"

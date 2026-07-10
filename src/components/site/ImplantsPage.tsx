@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { FiChevronDown, FiCheckCircle } from "react-icons/fi";
+import { FiChevronDown, FiCheckCircle, FiArrowUpRight, FiPhone, FiStar } from "react-icons/fi";
 import { PageHeader } from "@/components/site/PageHeader";
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import implantScan from "@/assets/x-guide-navigation.png";
+import dentalImplantHero from "@/assets/dental_implant_hero.png";
 
 const ACCORDION_ITEMS = [
   {
@@ -48,10 +49,115 @@ export function ImplantsPage() {
 
   return (
     <div className="bg-[#FAFCFF]">
-      <PageHeader 
-        title="Dental Implants" 
-        subtitle="Permanent tooth replacement and advanced X-Guide navigation."
-      />
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B2F5C] via-[#143F7A] to-[#1B4A8F]">
+        <div
+          aria-hidden
+          className="absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(46,182,204,0.28), transparent)" }}
+        />
+        <div
+          aria-hidden
+          className="absolute -left-32 bottom-0 h-[420px] w-[420px] rounded-full"
+          style={{ background: "radial-gradient(closest-side, rgba(233,199,123,0.18), transparent)" }}
+        />
+        <div className="container-x relative py-20 lg:py-28">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 text-white">
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 backdrop-blur px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] uppercase text-[#E9C77B]"
+              >
+                <FiStar /> Advanced Implantology
+              </motion.span>
+              <motion.h1
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="mt-6 font-display text-5xl sm:text-6xl lg:text-[72px] font-semibold leading-[1.02] text-white"
+              >
+                A Permanent,{" "}
+                <span className="italic font-serif text-[#E9C77B]">Natural</span>
+                <br /> Smile.
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="mt-6 max-w-xl text-[16px] leading-relaxed text-white/80"
+              >
+                Restore your confidence, chewing ability, and aesthetics with our state-of-the-art dental implants and X-Guide navigation technology.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mt-9 flex flex-wrap gap-3"
+              >
+                <a
+                  href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full pl-6 pr-2 py-2.5 text-sm font-semibold text-[#0B2F5C] bg-[#E9C77B] hover:bg-white transition-colors"
+                >
+                  Book Implant Consultation
+                  <span className="grid h-9 w-9 place-items-center rounded-full bg-[#0B2F5C] text-white group-hover:rotate-45 transition-transform">
+                    <FiArrowUpRight />
+                  </span>
+                </a>
+                <a
+                  href="tel:+19728336825"
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white border border-white/30 hover:border-[#E9C77B] hover:text-[#E9C77B] transition-colors"
+                >
+                  <FiPhone /> (972) 833-6825
+                </a>
+              </motion.div>
+
+              <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg">
+                {[
+                  { v: "1,500+", l: "Implants Placed" },
+                  { v: "99%", l: "Success Rate" },
+                  { v: "15+", l: "Years Experience" },
+                ].map((s) => (
+                  <div key={s.l}>
+                    <div className="font-display text-3xl font-semibold text-[#E9C77B]">{s.v}</div>
+                    <div className="text-[12px] uppercase tracking-wider text-white/60 mt-1">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative rounded-[32px] overflow-hidden shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] border border-white/10 group">
+                <img src={dentalImplantHero} alt="Precision Dental Implant" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 via-[#0B2F5C]/10 to-transparent" />
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-[24px] p-6 shadow-[0_20px_50px_-20px_rgba(11,47,92,0.4)] max-w-[250px] hidden sm:block border border-[#E5ECF3]"
+              >
+                <div className="flex items-center gap-1 text-[#E9C77B] mb-3">
+                  {[...Array(5)].map((_, i) => <FiStar key={i} className="fill-current" />)}
+                </div>
+                <p className="text-[13.5px] text-[#5A6B82] leading-relaxed font-light">
+                  "I can eat anything again and my smile looks perfect. Dr. Juma's precision is unmatched."
+                </p>
+                <div className="text-[12.5px] font-semibold text-[#0B2F5C] mt-3">— Robert D., McKinney</div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* THE IMPLANT PROCESS (WITH VIDEO) */}
       <section className="py-24 relative overflow-hidden">
@@ -104,12 +210,14 @@ export function ImplantsPage() {
               </div>
 
               <div className="mt-12">
-                <Link
-                  to="/contact"
+                <a
+                  href="https://local.demandforce.com/b/mckinneydentalandimplantcenter/schedule?widget=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-[#1B4A8F] hover:bg-[#113264] text-white px-8 py-3.5 font-serif text-[13px] tracking-[0.15em] uppercase shadow-lg hover:shadow-xl rounded-sm transition-colors duration-300"
                 >
                   Schedule A Consultation
-                </Link>
+                </a>
               </div>
             </motion.div>
 
