@@ -10,7 +10,7 @@ const highlights = [
 
 export function CommunityService() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f5f9ff] to-white py-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f5f9ff] to-white pt-12 pb-24">
       {/* Decorative blobs */}
       <motion.div
         aria-hidden
@@ -73,25 +73,6 @@ export function CommunityService() {
               </div>
             </motion.div>
 
-            {/* Floating badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              animate={{ y: [0, -10, 0] }}
-              // @ts-ignore - framer-motion combined transition
-              style={{}}
-              className="absolute -bottom-8 -right-4 md:-right-8 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-3 border border-slate-100"
-            >
-              <div className="h-12 w-12 rounded-full bg-[#285BBB] flex items-center justify-center text-white">
-                <FiHeart className="text-xl" />
-              </div>
-              <div>
-                <p className="font-bold text-slate-900 text-lg leading-none">500+</p>
-                <p className="text-xs text-slate-500 mt-1">Lives touched</p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Content */}
@@ -126,10 +107,9 @@ export function CommunityService() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * i, duration: 0.5 }}
-                    whileHover={{ y: -4 }}
-                    className="group flex gap-3 p-4 rounded-xl bg-gradient-to-br from-[#f5f9ff] to-white border border-slate-100 hover:border-[#285BBB]/30 hover:shadow-lg transition-all"
+                    className="group flex gap-2.5 p-3 rounded-xl bg-gradient-to-br from-[#f5f9ff] to-white border border-slate-100 hover:border-[#285BBB]/30 hover:shadow-lg transition-all"
                   >
-                    <div className="shrink-0 h-10 w-10 rounded-lg bg-[#285BBB]/10 text-[#285BBB] flex items-center justify-center group-hover:bg-[#285BBB] group-hover:text-white transition-colors">
+                    <div className="shrink-0 h-8 w-8 rounded-lg bg-[#285BBB]/10 text-[#285BBB] flex items-center justify-center text-sm group-hover:bg-[#285BBB] group-hover:text-white transition-colors">
                       <h.icon />
                     </div>
                     <div>

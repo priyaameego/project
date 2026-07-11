@@ -154,20 +154,6 @@ export function GeneralDentistryPage() {
                 <img src="https://greenleafdentists.com/blog/wp-content/uploads/2024/06/patient-receiving-Gentle-Dentistry-NJ.jpg" alt="General Dentistry" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 via-[#0B2F5C]/10 to-transparent" />
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-[24px] p-6 shadow-[0_20px_50px_-20px_rgba(11,47,92,0.4)] max-w-[250px] hidden sm:block border border-[#E5ECF3]"
-              >
-                <div className="flex items-center gap-1 text-[#E9C77B] mb-3">
-                  {[...Array(5)].map((_, i) => <FiStar key={i} className="fill-current" />)}
-                </div>
-                <p className="text-[13.5px] text-[#5A6B82] leading-relaxed font-light">
-                  "The most comfortable dental visit I've ever had. The entire team is amazing!"
-                </p>
-                <div className="text-[12.5px] font-semibold text-[#0B2F5C] mt-3">— Sarah M., McKinney</div>
-              </motion.div>
             </motion.div>
           </div>
         </div>

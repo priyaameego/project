@@ -19,7 +19,7 @@ export function MeetTheTeamPage() {
   return (
     <>
       {/* TEAM HEADER & ROSTER */}
-      <section className="bg-slate-50 pt-24 pb-20 lg:pt-32 lg:pb-28">
+      <section className="bg-slate-50 pt-12 pb-20 lg:pt-16 lg:pb-28">
         <div className="container-x">
           <div className="text-center max-w-3xl mx-auto px-4">
             <motion.h1

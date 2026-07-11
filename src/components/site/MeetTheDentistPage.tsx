@@ -42,7 +42,7 @@ const programs = [
 export function MeetTheDentistPage() {
   return (
     <>
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-slate-50">
+      <section className="relative pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-slate-50">
         <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-blue-100/50 to-transparent pointer-events-none" />
 
         <div className="container-x relative z-10 px-6 max-w-7xl mx-auto">

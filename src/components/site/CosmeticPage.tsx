@@ -167,20 +167,6 @@ export function CosmeticPage() {
                 <img src="https://dentakademiglobal.com/wp-content/uploads/2024/12/smile-design.webp" alt="Radiant cosmetic dentistry smile" className="w-full h-[520px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/60 via-[#0B2F5C]/10 to-transparent" />
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-[24px] p-6 shadow-[0_20px_50px_-20px_rgba(11,47,92,0.4)] max-w-[250px] hidden sm:block border border-[#E5ECF3]"
-              >
-                <div className="flex items-center gap-1 text-[#E9C77B] mb-3">
-                  {[...Array(5)].map((_, i) => <FiStar key={i} className="fill-current" />)}
-                </div>
-                <p className="text-[13.5px] text-[#5A6B82] leading-relaxed font-light">
-                  "Best decision I've ever made. My smile is exactly what I dreamed of."
-                </p>
-                <div className="text-[12.5px] font-semibold text-[#0B2F5C] mt-3">— Sarah M., McKinney</div>
-              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -238,7 +224,7 @@ export function CosmeticPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {TREATMENTS.map((t, i) => (
               <motion.article
                 key={t.title}
@@ -246,39 +232,28 @@ export function CosmeticPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-[28px] bg-white border border-[#E5ECF3] shadow-[0_15px_40px_-20px_rgba(11,47,92,0.1)] hover:shadow-[0_25px_50px_-20px_rgba(11,47,92,0.2)] transition-all duration-300 hover:-translate-y-2 flex flex-col"
+                className="group relative overflow-hidden rounded-[20px] bg-white border border-[#E5ECF3] shadow-[0_10px_30px_-15px_rgba(11,47,92,0.1)] hover:shadow-[0_20px_40px_-15px_rgba(11,47,92,0.2)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col"
               >
-                <div className="relative h-[280px] overflow-hidden">
+                <div className="relative h-[200px] sm:h-[220px] overflow-hidden">
                   <img
                     src={t.img}
                     alt={t.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                   />
-                  <div className="absolute top-5 left-5">
-                    <span className="rounded-full bg-white/95 backdrop-blur-md px-4 py-1.5 text-[11px] font-bold text-[#0B2F5C] tracking-[0.1em] shadow-sm uppercase">
-                      {t.tag}
-                    </span>
-                  </div>
                 </div>
-                <div className="p-8 flex-grow flex flex-col justify-between">
+                <div className="p-6 flex-grow flex flex-col justify-between">
                   <div>
-                    <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="flex items-start justify-between gap-3 mb-3">
                       <div>
-                        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#EAF6F9] text-[#1B4A8F] mb-5">
-                          <t.icon className="text-xl" />
+                        <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#EAF6F9] text-[#1B4A8F] mb-4">
+                          <t.icon className="text-lg" />
                         </span>
-                        <h3 className="font-display text-[22px] font-semibold text-[#0B2F5C]">{t.title}</h3>
+                        <h3 className="font-display text-[20px] font-semibold text-[#0B2F5C]">{t.title}</h3>
                       </div>
                     </div>
-                    <p className="text-[14.5px] text-[#5A6B82] leading-[1.7] font-light">{t.desc}</p>
+                    <p className="text-[14px] text-[#5A6B82] leading-[1.6] font-light">{t.desc}</p>
                   </div>
-                  <Link
-                    to="/contact"
-                    className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-[#1B4A8F] hover:text-[#2EB6CC] transition-colors uppercase tracking-wider"
-                  >
-                    Learn More <FiArrowUpRight className="text-base" />
-                  </Link>
                 </div>
               </motion.article>
             ))}

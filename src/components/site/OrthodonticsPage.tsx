@@ -157,20 +157,6 @@ export function OrthodonticsPage() {
               <img src={HERO_IMG} alt="Smiling patient with clear aligners" className="w-full h-[460px] sm:h-[540px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0B2F5C]/35 via-transparent to-transparent" />
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="absolute -bottom-6 -left-4 sm:left-6 bg-white rounded-2xl shadow-[0_22px_50px_-24px_rgba(11,47,92,0.55)] border border-[#E5ECF3] p-4 flex items-center gap-3"
-            >
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[#0B2F5C] to-[#1B4A8F] text-white">
-                <FiStar />
-              </span>
-              <div>
-                <div className="font-semibold text-[#0B2F5C] text-sm">Top Invisalign Provider</div>
-                <div className="text-[12px] text-[#6B7C95]">McKinney, TX · 5.0 ★ patient reviews</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>

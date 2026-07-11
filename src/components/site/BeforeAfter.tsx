@@ -25,8 +25,8 @@ const IMAGES = [
     reverse: false,
   },
   {
-    beforeSrc: "https://mckinneyddscenter.com/wp-content/uploads/2024/02/2-600x252.jpg",
-    afterSrc: "https://mckinneyddscenter.com/wp-content/uploads/2024/03/17b475b4-2051-4dbb-a055-8bdcc1352baa-768x298.jpg",
+    beforeSrc: "https://mckinneyddscenter.com/wp-content/uploads/2024/03/17b475b4-2051-4dbb-a055-8bdcc1352baa-768x298.jpg",
+    afterSrc: "https://mckinneyddscenter.com/wp-content/uploads/2024/02/2-600x252.jpg",
     label: "Full Mouth Rehabilitation",
     category: "Implants",
     treatment: "Full Arch Implants",
