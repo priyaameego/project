@@ -10,6 +10,7 @@ import {
   FiChevronUp,
   FiArrowRight,
 } from "react-icons/fi";
+import logoSrc from "@/assets/logo.png";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -35,7 +36,7 @@ export function Footer() {
             >
               <Link to="/" className="inline-block">
                 <img 
-                  src="https://mckinneyddscenter.com/wp-content/uploads/2026/06/MDIC-scaled.png" 
+                  src={logoSrc} 
                   alt="McKinney Dental Center" 
                   className="h-14 w-auto brightness-0 invert opacity-90" 
                 />

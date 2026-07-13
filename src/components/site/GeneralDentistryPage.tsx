@@ -182,7 +182,7 @@ export function GeneralDentistryPage() {
                 Complete care for a <span className="italic font-serif text-[#1B4A8F]">healthy life.</span>
               </h2>
 
-              <div className="space-y-8 mt-10">
+              <div className="space-y-5 mt-8">
                 {PROCESS_STEPS.map((step, i) => (
                   <motion.div 
                     key={step.title}
@@ -190,18 +190,18 @@ export function GeneralDentistryPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.15 }}
-                    className="flex gap-5"
+                    className="flex gap-4"
                   >
-                    <div className="shrink-0 mt-1">
-                      <div className="grid h-10 w-10 place-items-center rounded-full bg-[#1B4A8F]/10 text-[#1B4A8F] font-bold shadow-sm">
+                    <div className="shrink-0 mt-0.5">
+                      <div className="grid h-8 w-8 text-sm place-items-center rounded-full bg-[#1B4A8F]/10 text-[#1B4A8F] font-bold shadow-sm">
                         {i + 1}
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-[22px] font-medium text-[#0B2F5C] mb-2 font-sans tracking-tight">
+                      <h3 className="text-[18px] font-medium text-[#0B2F5C] mb-1 font-sans tracking-tight">
                         {step.title}
                       </h3>
-                      <p className="text-[#5A6B82] font-light leading-relaxed text-[15.5px]">
+                      <p className="text-[#5A6B82] font-light leading-relaxed text-[14px]">
                         {step.desc}
                       </p>
                     </div>
@@ -271,16 +271,16 @@ export function GeneralDentistryPage() {
             <h2 className="text-[34px] sm:text-[42px] font-semibold text-[#0B2F5C] leading-tight tracking-tight">
               A Modern Approach
             </h2>
-            <div className="mt-6 space-y-6 text-[#5A6B82] font-light leading-relaxed text-[16px]">
+            <div className="mt-5 space-y-5 text-[#5A6B82] font-light leading-relaxed text-[15px]">
               <p>
                 We believe that visiting the dentist shouldn't be a source of anxiety. Our practice is equipped 
                 with modern technology and comfort amenities designed to make your experience as relaxing and 
                 efficient as possible.
               </p>
               
-              <div className="pt-4 bg-[#F8FAFC] rounded-2xl p-6 border border-[#E5ECF3]">
-                <p className="mb-4 text-[16px] font-medium text-[#0B2F5C]">What to expect:</p>
-                <ul className="space-y-4">
+              <div className="bg-[#F8FAFC] rounded-xl p-5 border border-[#E5ECF3]">
+                <p className="mb-3 text-[15px] font-medium text-[#0B2F5C]">What to expect:</p>
+                <ul className="space-y-3">
                   {[
                     "Gentle, compassionate care",
                     "State-of-the-art digital imaging",

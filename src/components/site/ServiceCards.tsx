@@ -76,21 +76,21 @@ export function ServiceCards() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F5C]/90 via-[#0B2F5C]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
                 
                 {/* Float Icon */}
-                <div className="absolute top-4 left-4 grid h-12 w-12 place-items-center rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white text-2xl shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:bg-blue-600/80">
+                <div className="absolute top-4 left-4 grid h-[46px] w-[46px] place-items-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xl shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:bg-blue-600/80">
                   {card.icon}
                 </div>
                 
-                <div className="absolute bottom-4 left-5 right-5 transition-transform duration-500 group-hover:-translate-y-1">
-                  <h3 className="font-display font-semibold text-xl text-white tracking-wide">{card.title}</h3>
+                <div className="absolute bottom-5 left-5 right-5 transition-transform duration-500 group-hover:-translate-y-1">
+                  <h3 className="font-serif font-bold text-[24px] text-white tracking-wide drop-shadow-md">{card.title}</h3>
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-1 bg-white">
-                <p className="text-[15px] text-[#5A6B82] leading-relaxed flex-1">{card.subtitle}</p>
+                <p className="text-[16px] text-[#5A6B82] font-medium leading-relaxed flex-1">{card.subtitle}</p>
                 <Link
                   to={card.to}
-                  className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-[#1B4A8F] group-hover:gap-3 transition-all"
+                  className="mt-6 inline-flex items-center gap-2 text-[15px] font-bold text-[#1B4A8F] group-hover:gap-3 transition-all"
                 >
-                  Learn More <FiArrowRight />
+                  Learn More <FiArrowRight className="text-lg" />
                 </Link>
               </div>
             </motion.div>

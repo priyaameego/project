@@ -12,7 +12,8 @@ import {
   FiMapPin,
   FiClock,
 } from "react-icons/fi";
-const LOGO_SRC = "https://mckinneyddscenter.com/wp-content/uploads/2026/06/MDIC-scaled.png";
+import LOGO_SRC from "@/assets/logo.png";
+import mustReadPdf from "@/assets/dental.pdf";
 
 type Item = { label: string; to: string; children?: { label: string; to: string; desc?: string }[] };
 
@@ -252,7 +253,7 @@ export function Navbar() {
             <div className="flex items-center gap-3">
               <div className="hidden sm:flex items-center gap-2">
                 <a
-                  href="https://mckinneyddscenter.com/wp-content/uploads/2024/03/McKinney-Dental-Implant-MCK-TD-Profile-24-3.pdf"
+                  href={mustReadPdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-[4px] px-6 py-2.5 text-[15px] font-medium text-white shadow-sm transition-opacity hover:opacity-90 whitespace-nowrap"
