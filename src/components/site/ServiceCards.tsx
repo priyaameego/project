@@ -4,7 +4,7 @@ import { GiDiamonds, GiMagicSwirl } from "react-icons/gi";
 import { FaTooth } from "react-icons/fa";
 import { FiArrowRight, FiShield } from "react-icons/fi";
 import orthoImg from "@/assets/orthodonticsjpg.jpg";
-import generalImg from "@/assets/general-dentistry.jpg";
+import generalImg from "@/assets/gen.jpg";
 import cosmeticImg from "@/assets/Cosmetic-Dentistry.jpg";
 import implantImg from "@/assets/implant-hero.jpg";
 
