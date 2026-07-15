@@ -1,28 +1,27 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
-import { Link } from "@tanstack/react-router";
-import dentVideo from "@/assets/dent.mp4";
+import React, { useRef } from "react";
+import dentalVideo from "@/assets/dental.mp4";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // The number of seconds to cut from the beginning of the video
-  const START_TIME = 2; 
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = START_TIME;
-    }
-  }, []);
-
-  const handleVideoEnded = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = START_TIME;
-      videoRef.current.play();
-    }
-  };
 
   return (
     <section className="relative min-h-[100svh] lg:min-h-[75vh] lg:h-[75vh] w-full flex items-center overflow-hidden bg-[#fafafa] pt-28 pb-12 lg:py-0">
+      {/* Absolute Full width Video Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <video 
+          ref={videoRef}
+          src={dentalVideo} 
+          autoPlay
+          muted
+          playsInline
+          loop
+          className="w-full h-full object-cover"
+        />
+        {/* Nice gradient overlay to make text readable on the right while keeping video clear on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-white/40 to-white/95"></div>
+      </div>
+
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
@@ -44,51 +43,20 @@ export function Hero() {
       </style>
 
       {/* Main container matching the screenshot layout */}
-      <div className="container-x relative z-10 w-full max-w-[1400px] mx-auto px-6 h-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-0 mt-8 lg:mt-0">
+      <div className="container-x relative z-10 w-full max-w-[1400px] mx-auto px-6 h-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-end gap-8 lg:gap-0 mt-8 lg:mt-0">
         
-        {/* Left side - Video */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="w-full lg:w-1/2 flex justify-center lg:justify-end relative z-0 lg:pr-10"
-        >
-          {/* Subtle animated glow behind the video */}
-          <motion.div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 bg-white/40 rounded-full blur-[80px]"
-            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <div 
-            className="relative w-[85%] max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] mx-auto cursor-pointer"
-          >
-            <video 
-              ref={videoRef}
-              src={dentVideo} 
-              autoPlay
-              muted
-              playsInline
-              onEnded={handleVideoEnded}
-              className="w-full h-auto relative z-10 rounded-[20px]"
-              style={{ 
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
-              }}
-            />
-          </div>
-        </motion.div>
-
         {/* Right side - Text Content exactly matching the screenshot */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left z-10 lg:-ml-10"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="w-full lg:w-[50%] flex flex-col items-center lg:items-end text-center lg:text-right z-10"
         >
-          <h1 className="font-script text-[3.5rem] sm:text-[5rem] lg:text-[7rem] leading-[0.8] text-[#111] -rotate-2 mb-2 lg:mb-4 drop-shadow-sm">
+          <h1 className="font-script text-[3.5rem] sm:text-[5rem] lg:text-[7.5rem] leading-[0.9] text-[#111] -rotate-2 mb-2 lg:mb-4 drop-shadow-sm">
             Dental Implants
           </h1>
           
-          <h2 className="text-gold tracking-[0.2em] sm:tracking-[0.35em] text-[10px] sm:text-[14px] font-semibold uppercase mb-6 drop-shadow-sm sm:ml-2">
+          <h2 className="text-gold tracking-[0.2em] sm:tracking-[0.35em] text-[10px] sm:text-[14px] font-semibold uppercase mb-6 drop-shadow-sm sm:mr-2">
             Rediscover the beauty of your smile
           </h2>
           
