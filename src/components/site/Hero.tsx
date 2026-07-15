@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
-import dentalVideo from "@/assets/dental.mp4";
+import dentVideo from "@/assets/den.mp4";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -11,7 +11,7 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full z-0">
         <video 
           ref={videoRef}
-          src={dentalVideo} 
+          src={dentVideo} 
           autoPlay
           muted
           playsInline

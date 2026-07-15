@@ -722,7 +722,6 @@ export function Appointment({ className = "section-pad" }: { className?: string 
                 {[
                   { i: <FiPhone />, l: "(972) 833-6825", s: "Speak with our team" },
                   { i: <FiMail />, l: "info@mckinneyddscenter.com", s: "Email any time" },
-                  { i: <FiMapPin />, l: "McKinney, Texas", s: "3100 Ridge Road, Ste 300" },
                 ].map((r, i) => (
                   <div key={i} className="flex items-center gap-4">
                     <div className="grid h-11 w-11 place-items-center rounded-2xl bg-white/15 text-white text-lg">{r.i}</div>

@@ -12,7 +12,7 @@ import generalTech from "@/assets/general-care.jpg";
 // Note: Removed Dr. He and Andrea as requested.
 const TEAM = [
   { img: "https://mckinneyddscenter.com/wp-content/uploads/2023/11/AMANDA-PORTRAIT.jpg", name: "Amanda", role: "Office Manager" },
-  { img: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", name: "Saghar", role: "Hygienist" },
+  { img: "https://mckinneyddscenter.com/wp-content/uploads/2023/11/Saghar-Hygienist-600x900.jpeg", name: "Saghar", role: "Hygienist" },
 ];
 
 export function MeetTheTeamPage() {
