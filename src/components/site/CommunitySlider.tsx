@@ -3,32 +3,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const ACTION_IMAGES = [
-  {
-    src: "https://mckinneyddscenter.com/wp-content/uploads/2021/10/rsw_1300h_800-7.webp",
-    alt: "Community dental outreach in action",
-  },
-  {
-    src: "https://mckinneyddscenter.com/wp-content/uploads/2021/10/rsw_1300h_800-8.webp",
-    alt: "Volunteer team serving the community",
-  },
-  {
-    src: "https://mckinneyddscenter.com/wp-content/uploads/2021/10/rsw_1280h_854.webp",
-    alt: "Dental care mission trip",
-  },
-  {
-    src: "https://mckinneyddscenter.com/wp-content/uploads/2021/10/GivinfBack.png",
-    alt: "Giving back to the community",
-  },
-  {
-    src: "https://mckinneyddscenter.com/wp-content/uploads/2021/10/rsw_1300h_800-5.webp",
-    alt: "Community service event",
-  },
-  {
-    src: "https://mckinneyddscenter.com/wp-content/uploads/2021/10/rsw_1300h_800-6.webp",
-    alt: "Dental outreach program",
-  },
-];
+const ACTION_IMAGES: Array<{src: string, alt: string}> = [];
 
 export function CommunitySlider() {
   return (

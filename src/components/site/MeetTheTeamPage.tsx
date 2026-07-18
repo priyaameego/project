@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import amanda from "@/assets/team-amanda.jpg"; // Keeping Amanda as she's Office Manager, not Andrea
 
 import implantScan from "@/assets/implant-scan.jpg";
@@ -124,10 +125,11 @@ export function MeetTheTeamPage() {
           <div className="container-x">
             <div className="-mt-32 lg:-mt-44 relative z-20 px-4">
               <Swiper
-                modules={[Autoplay, Pagination]}
+                modules={[Autoplay, Pagination, Navigation]}
                 autoplay={{ delay: 3500, disableOnInteraction: false }}
                 loop
                 pagination={{ clickable: true }}
+                navigation={true}
                 spaceBetween={30}
                 slidesPerView={1}
                 breakpoints={{
@@ -142,11 +144,7 @@ export function MeetTheTeamPage() {
                     alt: "Our Practice",
                     desc: "Modern Facility"
                   },
-                  { 
-                    src: "https://mckinneyddscenter.com/wp-content/uploads/2022/01/Photo-11-min.jpg", 
-                    alt: "Dental Care",
-                    desc: "Comfortable Environment"
-                  },
+
                   { 
                     src: "https://mckinneyddscenter.com/wp-content/uploads/2023/11/OFFICE-PHOTO.jpg", 
                     alt: "Office Interior",

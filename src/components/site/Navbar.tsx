@@ -109,7 +109,7 @@ export function Navbar() {
             </a>
             <span className="inline-flex items-center gap-1.5">
               <FiClock style={{ color: GOLD }} className="shrink-0" />
-              Mon–Fri 8:00 — 6:00 · Sat 9:00 — 2:00
+              Monday - Friday 9:00 am - 5:00 PM
             </span>
           </div>
           <div className="flex items-center gap-4 sm:gap-5">

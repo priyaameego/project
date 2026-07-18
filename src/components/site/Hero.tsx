@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import dentVideo from "@/assets/den.mp4";
+import logoImg from "@/assets/logo.png";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -18,8 +19,10 @@ export function Hero() {
           loop
           className="w-full h-full object-cover"
         />
-        {/* Nice gradient overlay to make text readable on the right while keeping video clear on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-white/40 to-white/95"></div>
+        {/* Mobile overlay for readability */}
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] lg:hidden"></div>
+        {/* Desktop overlay */}
+        <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-black/10 via-white/40 to-white/95"></div>
       </div>
 
       <style>
@@ -42,6 +45,8 @@ export function Hero() {
         `}
       </style>
 
+
+
       {/* Main container matching the screenshot layout */}
       <div className="container-x relative z-10 w-full max-w-[1400px] mx-auto px-6 h-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-end gap-8 lg:gap-0 mt-8 lg:mt-0">
         
@@ -52,9 +57,15 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           className="w-full lg:w-[50%] flex flex-col items-center lg:items-end text-center lg:text-right z-10"
         >
-          <h1 className="font-script text-[3.5rem] sm:text-[5rem] lg:text-[7.5rem] leading-[0.9] text-[#111] -rotate-2 mb-2 lg:mb-4 drop-shadow-sm">
-            Dental Implants
-          </h1>
+          <div className="flex flex-col items-center lg:items-end mb-6">
+            <img src={logoImg} alt="McKinney Dental & Implant Center" className="h-16 sm:h-24 lg:h-32 mb-4 object-contain drop-shadow-md" />
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-[#111] uppercase font-bold tracking-wide">
+              McKinney
+            </h1>
+            <h2 className="text-lg sm:text-2xl lg:text-3xl font-light text-[#333] tracking-[0.2em] mt-1">
+              Dental & Implant Center
+            </h2>
+          </div>
           
           <h2 className="text-gold tracking-[0.2em] sm:tracking-[0.35em] text-[10px] sm:text-[14px] font-semibold uppercase mb-6 drop-shadow-sm sm:mr-2">
             Rediscover the beauty of your smile

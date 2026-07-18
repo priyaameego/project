@@ -11,7 +11,7 @@ const SERVICES = [
   { label: "X-Guide Implant Navigation" },
   { label: "Orthodontics" },
   { label: "Cosmetic Dentistry" },
-  { label: "Lip Lase / Smooth Lase" },
+  { label: "Dental Implants" },
 ];
 
 export function Welcome() {

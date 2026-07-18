@@ -200,9 +200,7 @@ export function Footer() {
                       Hours
                     </div>
                     <span className="text-sm text-white/80">
-                      Mon–Thu: 8am – 5pm
-                      <br />
-                      Fri: 8am – 2pm
+                      Monday - Friday 9:00 am - 5:00 PM
                     </span>
                   </div>
                 </li>
