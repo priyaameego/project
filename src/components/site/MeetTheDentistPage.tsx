@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FiStar, FiArrowUpRight, FiHeart, FiUsers, FiBookOpen, FiActivity } from "react-icons/fi";
 import imp from "@/assets/imp.png";
+import mustReadPdf from "@/assets/dental.pdf";
 import { CommunityService } from "@/components/site/CommunityService";
 import { CommunitySlider } from "@/components/site/CommunitySlider";
 
@@ -106,6 +107,18 @@ export function MeetTheDentistPage() {
                   ))}
                 </div>
               </div>
+
+              <div className="pt-4">
+                <a
+                  href={mustReadPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-[4px] px-8 py-3 text-[15px] font-medium text-white shadow-sm transition-opacity hover:opacity-90 whitespace-nowrap"
+                  style={{ background: `linear-gradient(110deg, #0B2A33 0%, #103E48 45%, #0E7C8C 100%)` }}
+                >
+                  Must Read
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -141,9 +154,14 @@ export function MeetTheDentistPage() {
               <p className="text-slate-300 text-lg mb-8 leading-relaxed font-light">
                 Discover how 3D-guided surgery and advanced digital scanning are making implants safer, faster, and more comfortable than ever before.
               </p>
-              <button className="flex items-center gap-2 font-semibold text-white group-hover:text-blue-400 transition-colors duration-300 w-max text-sm uppercase tracking-wider">
+              <a 
+                href={mustReadPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-semibold text-white group-hover:text-blue-400 transition-colors duration-300 w-max text-sm uppercase tracking-wider"
+              >
                 Read Full Article <FiArrowUpRight className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
+              </a>
             </div>
             
             <div className="md:w-1/2 relative min-h-[350px] md:min-h-full overflow-hidden">

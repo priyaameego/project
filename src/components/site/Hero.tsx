@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import dentVideo from "@/assets/den.mp4";
+import mobileDentVideo from "@/assets/dental.mp4";
 import logoImg from "@/assets/logo.png";
 
 export function Hero() {
@@ -11,13 +12,21 @@ export function Hero() {
       {/* Absolute Full width Video Background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video 
+          src={mobileDentVideo} 
+          autoPlay
+          muted
+          playsInline
+          loop
+          className="w-full h-full object-cover block lg:hidden"
+        />
+        <video 
           ref={videoRef}
           src={dentVideo} 
           autoPlay
           muted
           playsInline
           loop
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden lg:block"
         />
         {/* Mobile overlay for readability */}
         <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] lg:hidden"></div>

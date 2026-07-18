@@ -123,7 +123,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="overflow-x-hidden antialiased text-slate-800 bg-white">
         {children}
         <Scripts />
       </body>
