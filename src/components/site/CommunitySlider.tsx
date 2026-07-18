@@ -7,27 +7,11 @@ const ACTION_IMAGES: Array<{src: string, alt: string}> = [];
 
 export function CommunitySlider() {
   return (
-    <section className="relative overflow-hidden bg-white py-24">
+    <section className="relative overflow-hidden bg-white py-0">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(40,91,187,0.05),transparent_60%)]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14 max-w-3xl mx-auto"
-        >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#2EB6CC]/10 text-[#0F4C81] text-xs font-semibold tracking-[0.18em] uppercase">
-            Gallery
-          </span>
-          <h2 className="mt-5 font-serif text-4xl md:text-5xl text-slate-900 leading-tight">
-            SEE US IN <span className="italic text-[#285BBB]">ACTION</span>
-          </h2>
-          <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-            A glimpse into our commitment to serving McKinney and communities around the world.
-          </p>
-        </motion.div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,7 +36,7 @@ export function CommunitySlider() {
               768: { slidesPerView: 2.2, centeredSlides: true },
               1024: { slidesPerView: 3, centeredSlides: true },
             }}
-            className="community-swiper pb-14"
+            className="community-swiper pb-8"
           >
             {ACTION_IMAGES.map((img, i) => (
               <SwiperSlide key={i}>
